@@ -1,0 +1,423 @@
+Unnamed: 0,Instrument,Company Common Name,TRBC Business Sector Name,Resource Use Score,Policy Water Efficiency,Policy Energy Efficiency,Policy Environmental Supply Chain,Resource Reduction Targets,Targets Water Efficiency,Targets Energy Efficiency,Environment Management Training,Environmental Materials Sourcing,Total Energy Use To Revenues USD in million,Renewable Energy Use,Green Buildings,Environmental Supply Chain Management
+0,FICO.N,Fair Isaac Corp,Software & IT Services,bad,False,True,False,False,False,False,True,False,,False,True,False
+1,ROP.N,Roper Technologies Inc,Software & IT Services,bad,True,False,False,False,False,False,False,False,,False,False,True
+2,ADP.OQ,Automatic Data Processing Inc,Software & IT Services,bad,False,True,True,False,False,False,True,False,75.6647958734855,True,True,True
+3,CACI.N,CACI International Inc,Software & IT Services,good,True,True,True,False,False,False,False,False,46.0738847875793,True,True,True
+4,CDNS.OQ,Cadence Design Systems Inc,Software & IT Services,bad,True,True,True,False,False,False,False,True,102.983275497691,True,False,True
+5,ATVI.OQ,Activision Blizzard Inc,Software & IT Services,good,True,True,True,False,False,False,False,False,26.1108453936158,True,True,True
+6,MSFT.OQ,Microsoft Corp,Software & IT Services,good,True,True,True,True,True,True,True,True,288.745816477083,True,True,True
+7,DXC.N,DXC Technology Co,Software & IT Services,good,True,True,True,True,True,True,True,True,297.695752721529,True,False,True
+8,ORCL.N,Oracle Corp,Software & IT Services,good,True,True,True,True,True,True,True,True,135.596283403296,True,True,True
+9,PRGS.OQ,Progress Software Corp,Software & IT Services,good,True,True,True,False,False,False,False,True,27.0838469979089,True,True,True
+10,NLOK.OQ,Gen Digital Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,49.8834048640915,True,True,True
+11,SNPS.OQ,Synopsys Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,,True,True,True
+12,NCR.N,NCR Corp,Software & IT Services,bad,False,True,False,False,False,False,True,False,,False,True,False
+13,STCN.OQ,Steel Connect Inc,Software & IT Services,bad,True,True,False,False,False,False,False,False,73.2680729625082,False,False,True
+14,AVID.OQ,Avid Technology Inc,Software & IT Services,bad,False,False,True,False,False,False,False,False,,False,no value,True
+15,ANSS.OQ,ANSYS Inc,Software & IT Services,bad,True,True,True,False,False,False,True,False,80.8806746664429,True,True,True
+16,IT.N,Gartner Inc,Software & IT Services,good,True,True,True,False,False,False,True,False,19.3142316369382,True,True,True
+17,AKAM.OQ,Akamai Technologies Inc,Software & IT Services,bad,True,True,False,True,False,True,False,False,,True,True,False
+18,NTCT.OQ,Netscout Systems Inc,Software & IT Services,bad,False,True,True,False,False,False,True,True,,False,False,True
+19,CTSH.OQ,Cognizant Technology Solutions Corp,Software & IT Services,good,True,True,True,False,False,False,True,True,34.8604311881991,True,True,True
+20,EBAY.OQ,eBay Inc,Software & IT Services,good,True,True,True,False,False,False,True,False,138.766525911708,True,True,True
+21,FFIV.OQ,F5 Inc,Software & IT Services,bad,False,False,False,False,False,False,False,False,50.8087141433932,False,True,False
+22,NFLX.OQ,Netflix Inc,Software & IT Services,bad,False,True,False,False,False,False,False,False,18.9777693970597,True,False,False
+23,CRM.N,Salesforce Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,131.620553359683,True,True,True
+24,BLKB.OQ,Blackbaud Inc,Software & IT Services,good,True,True,True,False,False,False,True,False,15.9268157026753,True,True,False
+25,LDOS.N,Leidos Holdings Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,51.045051638611,True,False,True
+26,MA.N,Mastercard Inc,Software & IT Services,good,False,True,True,False,False,False,True,True,,True,True,True
+27,CVLT.OQ,Commvault Systems Inc,Software & IT Services,good,True,True,True,False,False,False,False,True,36.6308779598514,False,True,True
+28,VMW.N,VMware Inc,Software & IT Services,good,True,True,True,False,False,False,True,False,53.4778305190257,True,True,True
+29,VRSK.OQ,Verisk Analytics Inc,Software & IT Services,bad,False,True,True,False,False,False,False,False,,False,True,True
+30,META.OQ,Meta Platforms Inc,Software & IT Services,good,True,True,True,True,True,True,True,False,313.688744922792,True,True,False
+31,BAH.N,Booz Allen Hamilton Holding Corp,Software & IT Services,bad,True,True,False,False,False,False,True,False,,False,True,True
+32,EPAM.N,Epam Systems Inc,Software & IT Services,bad,False,True,False,False,False,False,False,False,681509024.4669917,False,True,False
+33,PANW.OQ,Palo Alto Networks Inc,Software & IT Services,bad,False,True,True,False,False,False,True,False,,True,True,True
+34,NOW.N,ServiceNow Inc,Software & IT Services,good,True,True,True,False,False,False,False,True,64.5374491180461,True,True,True
+35,WDAY.OQ,Workday Inc,Software & IT Services,bad,True,True,True,True,False,True,True,False,,True,False,True
+36,DBX.OQ,Dropbox Inc,Software & IT Services,bad,False,False,True,False,False,False,False,False,343.251789539683,False,False,True
+37,SABR.OQ,Sabre Corp,Software & IT Services,bad,True,True,True,False,False,False,False,False,,False,True,True
+38,PYPL.OQ,PayPal Holdings Inc,Software & IT Services,good,True,True,True,False,False,False,False,False,36.4100744945015,True,True,False
+39,TWLO.N,Twilio Inc,Software & IT Services,bad,False,False,True,False,False,False,False,False,,False,False,False
+40,BKI.N,Black Knight Inc,Software & IT Services,bad,True,True,False,True,False,True,False,False,104.319414316702,False,False,False
+41,SMAR.N,Smartsheet Inc,Software & IT Services,bad,False,True,False,False,False,False,False,False,,True,True,False
+42,MNTV.OQ,Momentive Global Inc,Software & IT Services,bad,True,True,False,False,False,False,False,False,30.0552518556241,True,True,False
+43,PSN.N,Parsons Corp,Software & IT Services,bad,True,True,True,False,False,False,False,True,,False,False,True
+44,SBUX.OQ,Starbucks Corp,Cyclical Consumer Services,good,True,True,True,True,True,False,False,True,322.730982842749,True,True,True
+45,EW.N,Edwards Lifesciences Corp,Healthcare Services & Equipment,good,True,True,True,True,True,True,True,True,117.491065456282,True,True,True
+46,TMO.N,Thermo Fisher Scientific Inc,Healthcare Services & Equipment,good,True,True,True,False,False,False,True,True,234.055453826732,True,False,True
+47,NXPI.OQ,NXP Semiconductors NV,Technology Equipment,good,True,True,True,True,True,True,True,True,598.922953900388,True,False,True
+48,HPE.N,Hewlett Packard Enterprise Co,Technology Equipment,good,True,True,True,False,False,False,True,True,82.9915059026778,True,no value,True
+49,ENPH.OQ,Enphase Energy Inc,Renewable Energy,bad,True,True,True,False,False,False,False,True,37.4084135885098,True,False,True
+50,HAS.OQ,Hasbro Inc,Cyclical Consumer Products,good,True,True,True,True,True,True,False,True,31.1748001990691,True,True,True
+51,IR.N,Ingersoll Rand Inc,Industrial Goods,bad,True,False,True,True,True,False,True,False,194.363248195015,True,False,True
+52,KHC.OQ,Kraft Heinz Co,Food & Beverages,good,True,True,True,True,True,True,False,True,664.898517778972,True,False,True
+53,HAL.N,Halliburton Co,Energy - Fossil Fuels,good,True,True,True,False,False,False,True,True,3128.49218698921,True,True,True
+54,BR.N,Broadridge Financial Solutions Inc,Industrial & Commercial Services,bad,False,True,True,False,False,False,True,False,94.6103028498362,False,True,True
+55,QCOM.OQ,Qualcomm Inc,Technology Equipment,good,True,True,True,True,False,True,True,False,85.0316919799797,True,True,True
+56,ATVI.OQ,Activision Blizzard Inc,Software & IT Services,good,True,True,True,False,False,False,False,False,26.1108453936158,True,True,True
+57,PCG.N,PG&E Corp,Utilities,good,True,True,True,False,False,False,True,True,105.086675806607,True,True,True
+58,DGX.N,Quest Diagnostics Inc,Healthcare Services & Equipment,good,True,True,True,False,False,False,True,True,230.164998146088,True,True,True
+59,TDG.N,TransDigm Group Inc,Industrial Goods,bad,True,True,False,True,True,True,False,False,260.522007250636,True,False,False
+60,LNC.N,Lincoln National Corp,Insurance,good,True,True,True,False,False,False,True,False,890321876.0184366,False,False,True
+61,IPG.N,Interpublic Group of Companies Inc,Cyclical Consumer Services,good,True,True,True,False,False,False,True,False,60.4628589842491,True,True,True
+62,JNPR.N,Juniper Networks Inc,Technology Equipment,good,True,True,True,False,False,False,True,True,199.797947375089,True,True,True
+63,TMUS.OQ,T-Mobile US Inc,Telecommunications Services,good,False,True,True,True,False,True,False,True,360.745720062907,True,True,True
+64,CTLT.N,Catalent Inc,Pharmaceuticals & Medical Research,good,True,True,True,True,True,True,True,True,657.328664332166,True,False,True
+65,ESS.N,Essex Property Trust Inc,Real Estate,bad,True,True,True,True,True,True,True,False,612.471816515799,True,False,True
+66,FDS.N,Factset Research Systems Inc,Industrial & Commercial Services,bad,True,True,False,False,False,False,False,False,,True,True,False
+67,WTW.OQ,Willis Towers Watson PLC,Insurance,bad,False,True,True,False,False,False,True,True,,False,False,True
+68,JBHT.OQ,J B Hunt Transport Services Inc,Transportation,bad,False,True,True,False,False,False,True,False,844116828.8127927,True,False,True
+69,AMGN.OQ,Amgen Inc,Pharmaceuticals & Medical Research,good,True,True,True,True,True,False,True,False,122.906963316524,True,True,True
+70,TAP.N,Molson Coors Beverage Co,Food & Beverages,bad,True,True,True,True,True,True,True,True,2322.28322548323,True,False,True
+71,EFX.N,Equifax Inc,Industrial & Commercial Services,bad,False,True,True,False,False,False,True,False,,False,True,False
+72,UAL.OQ,United Airlines Holdings Inc,Transportation,bad,False,True,False,False,False,False,False,False,16271.9227641471,True,True,False
+73,NI.N,NiSource Inc,Utilities,good,True,True,True,True,True,False,True,True,819.731814842027,True,True,True
+74,ILMN.OQ,Illumina Inc,Healthcare Services & Equipment,good,True,True,True,True,True,False,True,True,130.389748121962,True,True,True
+75,CSCO.OQ,Cisco Systems Inc,Technology Equipment,good,True,True,True,True,True,True,True,True,117.528604118993,True,True,True
+76,FRC.N,First Republic Bank,Banking & Investment Services,bad,False,True,False,False,False,False,False,False,,True,False,False
+77,MDLZ.OQ,Mondelez International Inc,Food & Beverages,good,True,True,True,True,True,False,True,True,716.358827734095,True,True,True
+78,VNO.N,Vornado Realty Trust,Real Estate,bad,True,True,True,True,True,True,True,True,1796.46742721226,False,False,False
+79,LHX.N,L3harris Technologies Inc,Industrial Goods,good,True,True,True,True,True,False,True,True,216.829724084863,True,True,True
+80,NKE.N,Nike Inc,Cyclical Consumer Products,bad,True,True,True,True,True,False,True,True,,True,True,True
+81,MRO.N,Marathon Oil Corp,Energy - Fossil Fuels,good,True,True,True,False,False,False,True,False,8531.25439300036,True,False,True
+82,ELV.N,Elevance Health Inc,Healthcare Services & Equipment,good,True,True,True,False,False,False,False,True,4.82980979378097,True,True,True
+83,PPL.N,PPL Corp,Utilities,bad,True,True,True,False,False,False,True,True,,False,True,True
+84,CCI.N,Crown Castle Inc,Real Estate,bad,True,True,True,False,False,False,True,False,129.076723817034,False,True,False
+85,FAST.OQ,Fastenal Co,Industrial Goods,bad,False,True,True,False,False,False,True,False,,False,False,True
+86,FCX.N,Freeport-McMoRan Inc,Mineral Resources,good,True,True,True,False,False,False,True,False,3992.64609323703,True,False,True
+87,LNT.OQ,Alliant Energy Corp,Utilities,bad,True,True,False,True,True,False,True,False,41.9980234396293,True,True,False
+88,NWSA.OQ,News Corp,Cyclical Consumer Services,bad,False,True,True,False,False,False,True,True,,False,True,True
+89,INVH.N,Invitation Homes Inc,Real Estate,bad,True,True,True,False,False,False,False,False,,False,False,True
+90,TSLA.OQ,Tesla Inc,Automobiles & Auto Parts,bad,True,True,True,False,False,False,True,True,,True,True,True
+91,FFIV.OQ,F5 Inc,Software & IT Services,bad,False,False,False,False,False,False,False,False,50.8087141433932,False,True,False
+92,MCD.N,McDonald's Corp,Cyclical Consumer Services,good,True,True,True,True,True,True,True,True,353.714928310373,True,True,True
+93,ADSK.OQ,Autodesk Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,96.8447929965347,True,True,False
+94,HST.OQ,Host Hotels & Resorts Inc,Real Estate,good,True,True,True,True,True,True,False,True,1190.22726643598,True,True,True
+95,XEL.OQ,Xcel Energy Inc,Utilities,good,True,True,True,False,False,False,True,True,,False,True,True
+96,IDXX.OQ,IDEXX Laboratories Inc,Healthcare Services & Equipment,bad,True,True,True,False,False,False,True,False,62.9835694914411,True,True,True
+97,BBWI.N,Bath & Body Works Inc,Retailers,good,True,True,True,False,False,False,False,True,,False,True,True
+98,PCAR.OQ,Paccar Inc,Industrial Goods,bad,True,True,True,False,False,False,True,True,168.658803427931,True,False,True
+99,PSA.N,Public Storage,Real Estate,good,True,True,True,True,True,True,False,False,289.317375330081,True,True,True
+100,KO.N,Coca-Cola Co,Food & Beverages,bad,True,True,True,True,True,False,True,True,1648.83714913982,True,True,True
+101,HRL.N,Hormel Foods Corp,Food & Beverages,good,True,True,True,True,False,True,True,True,1167.84054381619,True,True,True
+102,TEL.N,TE Connectivity Ltd,Industrial Goods,good,True,True,True,True,True,True,True,True,320.531394491724,True,True,True
+103,JPM.N,JPMorgan Chase & Co,Banking & Investment Services,good,True,True,True,True,True,False,True,True,72.1342057887857,True,True,True
+104,GE.N,General Electric Co,Consumer Goods Conglomerates,good,True,True,True,False,False,False,True,True,289.773033586716,True,True,True
+105,CDW.OQ,CDW Corp,Software & IT Services,good,True,True,True,False,False,False,True,False,8.92482517482517,True,True,False
+106,BDX.N,Becton Dickinson and Co,Healthcare Services & Equipment,good,True,True,True,True,True,True,True,True,333.185104701698,True,True,True
+107,MMC.N,Marsh & McLennan Companies Inc,Insurance,bad,False,True,True,False,False,False,True,True,,True,no value,True
+108,WELL.N,Welltower Inc,Real Estate,good,True,True,True,True,True,True,True,True,1420.79305575155,True,False,True
+109,MSFT.OQ,Microsoft Corp,Software & IT Services,good,True,True,True,True,True,True,True,True,288.745816477083,True,True,True
+110,VFC.N,VF Corp,Cyclical Consumer Products,bad,True,True,True,False,False,False,False,True,108.167288715129,True,True,True
+111,GPN.N,Global Payments Inc,Industrial & Commercial Services,bad,True,True,False,False,False,False,False,False,45.7880046770013,True,True,False
+112,MRK.N,Merck & Co Inc,Pharmaceuticals & Medical Research,good,True,True,True,True,True,False,True,True,353.658837056504,True,True,True
+113,PG.N,Procter & Gamble Co,Personal & Household Products & Services,good,True,True,True,True,True,False,True,True,885.454545454545,True,True,True
+114,FANG.OQ,Diamondback Energy Inc,Energy - Fossil Fuels,bad,True,True,False,True,True,False,True,False,908.854745822964,False,False,False
+115,UNP.N,Union Pacific Corp,Transportation,bad,False,True,True,False,False,False,False,False,,False,False,True
+116,META.OQ,Meta Platforms Inc,Software & IT Services,good,True,True,True,True,True,True,True,False,313.688744922792,True,True,False
+117,PXD.N,Pioneer Natural Resources Co,Energy - Fossil Fuels,bad,True,False,True,True,True,False,True,False,,True,False,False
+118,RE.N,Everest Re Group Ltd,Insurance,bad,False,False,False,True,False,True,False,False,1.39781712899118,False,True,False
+119,TSN.N,Tyson Foods Inc,Food & Beverages,bad,True,True,True,True,True,True,False,False,1364.54336967842,True,True,True
+120,WMT.N,Walmart Inc,Food & Drug Retailing,good,True,True,True,False,False,False,True,True,240.941137032652,True,True,True
+121,IFF.N,International Flavors & Fragrances Inc,Food & Beverages,good,True,True,True,True,True,False,True,True,481.332601235415,True,False,True
+122,KLAC.OQ,KLA Corp,Technology Equipment,bad,True,True,True,False,False,False,True,False,102.60166244383,True,False,True
+123,MTB.N,M&T Bank Corp,Banking & Investment Services,bad,True,True,False,True,True,False,True,False,108.447708106285,False,True,False
+124,HBAN.OQ,Huntington Bancshares Inc,Banking & Investment Services,bad,True,True,False,True,True,True,True,False,101.921281922884,True,True,False
+125,DLR.N,Digital Realty Trust Inc,Real Estate,good,True,True,True,True,False,True,True,True,7788.57530014363,True,True,True
+126,TRMB.OQ,Trimble Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,52.1986280779426,False,True,True
+127,MTD.N,Mettler-Toledo International Inc,Technology Equipment,bad,False,True,True,False,False,False,False,True,167.516440600011,True,False,True
+128,CB.N,Chubb Ltd,Insurance,bad,False,True,False,False,False,False,True,False,,True,True,False
+129,PEP.OQ,PepsiCo Inc,Food & Beverages,good,True,True,True,True,True,False,True,True,1020.92193170093,True,False,True
+130,MCK.N,Mckesson Corp,Pharmaceuticals & Medical Research,bad,True,True,True,False,False,False,True,True,433045214.93016624,True,True,True
+131,EVRG.N,Evergy Inc,Utilities,bad,True,True,False,False,False,False,True,False,,True,False,False
+132,MMM.N,3M Co,Consumer Goods Conglomerates,good,True,True,True,True,True,True,True,True,853.478037052751,True,False,True
+133,TECH.OQ,Bio-Techne Corp,Pharmaceuticals & Medical Research,bad,True,True,True,False,False,False,True,True,,True,False,True
+134,MAA.N,Mid-America Apartment Communities Inc,Real Estate,bad,True,True,False,True,True,True,False,False,622.093850939821,False,True,False
+135,WM.N,Waste Management Inc,Industrial & Commercial Services,good,True,True,True,True,True,True,True,True,1976.54395181529,True,True,True
+136,AJG.N,Arthur J. Gallagher & Co.,Insurance,bad,False,True,False,False,False,False,False,False,,False,False,False
+137,WHR.N,Whirlpool Corp,Cyclical Consumer Products,good,True,True,True,True,True,True,True,True,339.666636342961,True,False,True
+138,RTX.N,Raytheon Technologies Corp,Industrial Goods,good,True,True,True,True,True,False,True,True,274.302354475989,True,True,True
+139,KDP.OQ,Keurig Dr Pepper Inc,Food & Beverages,good,True,True,True,True,True,False,False,True,537.939004967279,True,True,True
+140,HSY.N,Hershey Co,Food & Beverages,good,True,True,True,True,True,True,True,True,520.813501661959,True,True,True
+141,CMG.N,Chipotle Mexican Grill Inc,Cyclical Consumer Services,bad,True,True,True,True,False,True,True,False,,True,False,False
+142,ORCL.N,Oracle Corp,Software & IT Services,good,True,True,True,True,True,True,True,True,135.596283403296,True,True,True
+143,COST.OQ,Costco Wholesale Corp,Retailers,good,True,True,True,True,True,False,True,True,,True,True,True
+144,PARA.OQ,Paramount Global,Cyclical Consumer Services,good,False,True,True,False,False,False,True,True,79.8765269712446,True,True,True
+145,TDY.N,Teledyne Technologies Inc,Technology Equipment,bad,False,False,True,False,False,False,True,False,,False,False,True
+146,ED.N,Consolidated Edison Inc,Utilities,bad,True,False,True,False,False,False,True,False,,False,False,True
+147,STX.OQ,Seagate Technology Holdings PLC,Technology Equipment,bad,True,True,True,True,True,True,True,True,559.046017699114,True,False,True
+148,APH.N,Amphenol Corp,Technology Equipment,good,True,True,True,False,False,False,True,True,287.625975745428,True,True,True
+149,WAB.N,Westinghouse Air Brake Technologies Corp,Industrial Goods,bad,True,True,True,True,True,True,False,False,,True,True,True
+150,PNC.N,PNC Financial Services Group Inc,Banking & Investment Services,good,True,True,True,True,True,True,True,True,112.097580024851,True,True,True
+151,FE.N,FirstEnergy Corp,Utilities,good,True,True,True,True,True,True,True,True,20776.3344412504,True,True,True
+152,CCL.N,Carnival Corp,Cyclical Consumer Services,bad,True,True,True,False,False,False,True,True,29875.029769392,True,False,True
+153,HLT.N,Hilton Worldwide Holdings Inc,Cyclical Consumer Services,good,True,True,True,True,True,True,True,True,3834.02176917761,True,True,True
+154,MCHP.OQ,Microchip Technology Inc,Technology Equipment,bad,True,True,True,False,False,False,True,False,522.046210910583,True,False,True
+155,AZO.N,Autozone Inc,Retailers,bad,False,True,True,False,False,False,True,False,401.62977798436,True,False,True
+156,WAT.N,Waters Corp,Healthcare Services & Equipment,good,True,True,True,True,True,False,True,True,143.271285253469,True,True,True
+157,WRK.N,Westrock Co,Applied Resources,good,True,True,True,True,True,True,True,True,0.017587178133052,True,False,True
+158,CINF.OQ,Cincinnati Financial Corp,Insurance,bad,True,True,True,True,True,False,True,True,,False,True,False
+159,FTV.N,Fortive Corp,Industrial Goods,bad,True,True,True,False,False,False,False,True,,False,False,True
+160,TJX.N,TJX Companies Inc,Retailers,good,True,True,True,False,False,False,True,True,170.490809474768,True,True,True
+161,NSC.N,Norfolk Southern Corp,Transportation,bad,False,True,True,False,False,False,True,True,10599.6859450726,True,True,True
+162,LRCX.OQ,Lam Research Corp,Technology Equipment,good,True,True,True,True,True,True,False,True,99.0195676252204,True,True,True
+163,KMX.N,Carmax Inc,Retailers,bad,True,True,False,False,False,False,False,False,75.4511228699326,True,True,False
+164,MHK.N,Mohawk Industries Inc,Cyclical Consumer Products,good,True,True,True,True,True,False,False,True,4007.63316250915,True,True,True
+165,KEY.N,KeyCorp,Banking & Investment Services,bad,False,True,True,False,False,False,False,False,80.9477219545767,True,True,True
+166,BA.N,Boeing Co,Industrial Goods,good,True,True,True,True,True,True,False,True,269.28041614488,True,True,True
+167,EQT.N,EQT Corp,Energy - Fossil Fuels,bad,True,True,False,False,False,False,True,False,7.53786716960445,True,False,False
+168,J.N,Jacobs Solutions Inc,Industrial & Commercial Services,good,True,True,True,False,False,False,True,False,45.2568582092729,True,True,True
+169,AVY.N,Avery Dennison Corp,Applied Resources,good,True,True,True,True,True,True,True,True,510.210149495141,True,False,True
+170,LLY.N,Eli Lilly and Co,Pharmaceuticals & Medical Research,good,True,True,True,True,True,False,True,True,227.267995366969,True,False,True
+171,SIVB.OQ,SVB Financial Group,Banking & Investment Services,bad,False,True,False,False,False,False,False,False,13.2979144836911,True,False,False
+172,CTVA.N,Corteva Inc,Food & Beverages,bad,True,True,True,True,True,True,False,False,654.426445225167,True,False,True
+173,LUV.N,Southwest Airlines Co,Transportation,good,True,True,True,False,False,False,True,True,14732.1470804306,True,False,True
+174,GILD.OQ,Gilead Sciences Inc,Pharmaceuticals & Medical Research,good,True,True,True,False,False,False,True,True,66.0547288266029,True,True,True
+175,ES.N,Eversource Energy,Utilities,good,True,True,True,True,False,True,True,True,198.936972114679,True,True,True
+176,V.N,Visa Inc,Software & IT Services,good,True,True,True,False,False,False,False,True,26.7994192076332,True,True,True
+177,ITW.N,Illinois Tool Works Inc,Consumer Goods Conglomerates,bad,True,True,True,False,False,False,True,True,383.610321687997,True,False,True
+178,ABT.N,Abbott Laboratories,Healthcare Services & Equipment,good,True,True,True,True,True,False,True,True,327.939640162507,True,True,True
+179,AXP.N,American Express Co,Banking & Investment Services,good,True,True,True,True,True,True,True,True,22.7287081563098,True,True,False
+180,SPG.N,Simon Property Group Inc,Real Estate,bad,True,True,True,True,True,True,True,False,2113.37244639705,True,False,True
+181,JNJ.N,Johnson & Johnson,Pharmaceuticals & Medical Research,good,True,True,True,True,True,True,True,True,127.400693148493,True,True,True
+182,TRGP.N,Targa Resources Corp,Energy - Fossil Fuels,good,True,True,True,False,False,False,True,True,1507.98239507251,True,True,True
+183,ZBH.N,Zimmer Biomet Holdings Inc,Healthcare Services & Equipment,bad,True,True,True,False,False,False,False,False,2.51479033204869,True,False,True
+184,LW.N,Lamb Weston Holdings Inc,Food & Beverages,bad,False,False,False,False,False,False,False,False,,False,False,False
+185,GS.N,Goldman Sachs Group Inc,Banking & Investment Services,good,True,True,True,True,True,False,True,True,26.4377233070211,True,True,True
+186,ADP.OQ,Automatic Data Processing Inc,Software & IT Services,bad,False,True,True,False,False,False,True,False,75.6647958734855,True,True,True
+187,CMS.N,CMS Energy Corp,Utilities,bad,True,True,True,True,True,False,True,False,1442.65247646336,True,True,True
+188,WY.N,Weyerhaeuser Co,Real Estate,good,True,True,True,True,False,True,True,True,3769.60805999411,True,False,True
+189,CBOE.Z,Cboe Global Markets Inc,Banking & Investment Services,bad,False,False,False,False,False,False,True,False,40.494334439739,True,False,False
+190,O.N,Realty Income Corp,Real Estate,good,True,True,True,True,True,True,True,False,1.63694567547561,True,True,False
+191,ROP.N,Roper Technologies Inc,Software & IT Services,bad,True,False,False,False,False,False,False,False,,False,False,True
+192,FDX.N,FedEx Corp,Transportation,good,False,True,True,True,False,True,False,True,3670.61303731583,True,True,True
+193,AMCR.N,Amcor PLC,Applied Resources,good,True,True,True,True,True,True,True,True,1535.409921468,True,False,True
+194,GNRC.N,Generac Holdings Inc,Industrial Goods,bad,False,False,True,False,False,False,True,False,,False,no value,False
+195,XRAY.OQ,DENTSPLY SIRONA Inc,Healthcare Services & Equipment,bad,True,True,True,True,True,False,True,False,114.944451825254,True,True,False
+196,MLM.N,Martin Marietta Materials Inc,Mineral Resources,bad,True,True,False,False,False,False,False,False,,True,False,False
+197,KMI.N,Kinder Morgan Inc,Energy - Fossil Fuels,good,True,True,True,False,False,False,True,False,1589.99450933172,True,True,True
+198,AEP.OQ,American Electric Power Company Inc,Utilities,good,True,True,True,True,False,True,True,False,22.3680631848499,True,True,True
+199,AVB.N,Avalonbay Communities Inc,Real Estate,bad,True,True,True,True,True,True,True,False,378.803776281674,True,no value,True
+200,INTC.OQ,Intel Corp,Technology Equipment,good,True,True,True,True,True,True,True,True,530.218667746507,True,True,True
+201,DRI.N,Darden Restaurants Inc,Cyclical Consumer Services,bad,True,True,True,False,False,False,False,False,,False,True,True
+202,LKQ.OQ,LKQ Corp,Automobiles & Auto Parts,bad,False,True,True,False,False,False,True,True,357.776292164877,True,True,True
+203,ABBV.N,Abbvie Inc,Pharmaceuticals & Medical Research,good,True,True,True,True,True,False,True,True,170.080253394309,True,False,True
+204,ATO.N,Atmos Energy Corp,Utilities,bad,False,False,False,False,False,False,False,False,,False,True,False
+205,PRU.N,Prudential Financial Inc,Insurance,bad,False,True,True,False,False,False,False,True,7.90036476160938,True,True,True
+206,KEYS.N,Keysight Technologies Inc,Industrial Goods,good,True,True,True,True,False,True,True,True,174.76340821696,True,True,True
+207,SRE.N,Sempra Energy,Utilities,good,True,True,True,True,True,True,True,True,,True,True,True
+208,C.N,Citigroup Inc,Banking & Investment Services,good,True,True,True,True,True,True,True,True,67.5059468332243,True,True,True
+209,L.N,Loews Corp,Insurance,bad,True,True,True,True,False,True,True,True,,False,True,False
+210,ALK.N,Alaska Air Group Inc,Transportation,bad,False,True,True,False,False,False,False,True,13965.8008419689,False,True,False
+211,VICI.N,VICI Properties Inc,Real Estate,bad,True,True,True,False,False,False,False,False,,False,True,True
+212,TGT.N,Target Corp,Retailers,good,True,True,True,False,False,False,True,True,190.078301966888,True,True,True
+213,LDOS.N,Leidos Holdings Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,51.045051638611,True,False,True
+214,ICE.N,Intercontinental Exchange Inc,Banking & Investment Services,bad,True,True,False,False,False,False,True,False,,True,True,False
+215,MOH.N,Molina Healthcare Inc,Healthcare Services & Equipment,bad,True,True,False,False,False,False,False,False,,False,True,False
+216,MSI.N,Motorola Solutions Inc,Technology Equipment,good,True,True,True,True,True,False,True,True,89.5387105476126,True,True,True
+217,STZ.N,Constellation Brands Inc,Food & Beverages,bad,True,True,True,False,False,False,False,False,592.874488419286,True,False,False
+218,AIG.N,American International Group Inc,Insurance,bad,True,True,True,False,False,False,False,False,,True,True,False
+219,SCHW.N,Charles Schwab Corp,Banking & Investment Services,bad,True,True,False,False,False,False,False,False,,False,True,False
+220,IQV.N,IQVIA Holdings Inc,Pharmaceuticals & Medical Research,bad,False,True,True,False,False,False,True,True,,True,False,True
+221,DE.N,Deere & Co,Industrial Goods,good,True,True,True,True,True,False,True,False,293.407994172812,True,no value,True
+222,DFS.N,Discover Financial Services,Banking & Investment Services,bad,True,True,False,False,False,False,False,False,24.3633655994043,False,True,False
+223,BBY.N,Best Buy Co Inc,Retailers,good,True,True,True,True,True,True,True,True,119.445269932961,True,False,True
+224,DG.N,Dollar General Corp,Retailers,bad,False,False,False,False,False,False,False,False,,False,False,True
+225,EXC.OQ,Exelon Corp,Utilities,bad,True,False,True,False,False,False,False,True,,True,False,True
+226,MNST.OQ,Monster Beverage Corp,Food & Beverages,bad,True,True,False,False,False,False,False,False,21.1653117020221,True,True,False
+227,AMD.OQ,Advanced Micro Devices Inc,Technology Equipment,good,True,True,True,True,True,False,True,True,23.6582694414019,True,True,True
+228,CRL.N,Charles River Laboratories International Inc,Pharmaceuticals & Medical Research,good,True,True,True,False,False,False,False,True,,True,True,True
+229,KMB.N,Kimberly-Clark Corp,Personal & Household Products & Services,bad,True,True,True,True,True,False,True,True,2621.91358024691,True,False,True
+230,WRB.N,W R Berkley Corp,Insurance,bad,True,True,True,False,False,False,False,False,,False,no value,False
+231,TFX.N,Teleflex Inc,Healthcare Services & Equipment,bad,True,True,True,True,False,True,True,False,,True,True,True
+232,F.N,Ford Motor Co,Automobiles & Auto Parts,good,True,True,True,True,True,False,True,True,311.462936959535,True,True,True
+233,HWM.N,Howmet Aerospace Inc,Industrial Goods,bad,True,True,True,True,False,True,False,True,2200.32180209171,True,False,True
+234,D.N,Dominion Energy Inc,Utilities,good,True,True,True,True,True,True,True,True,,True,True,True
+235,CFG.N,Citizens Financial Group Inc,Banking & Investment Services,bad,False,True,False,False,False,False,False,False,,False,True,False
+236,ANET.N,Arista Networks Inc,Technology Equipment,good,True,True,True,False,False,False,True,True,29.3503480278422,True,True,True
+237,MCO.N,Moody's Corp,Industrial & Commercial Services,good,True,True,True,False,False,False,True,True,16.1930524284335,True,True,True
+238,MPC.N,Marathon Petroleum Corp,Energy - Fossil Fuels,good,True,True,True,True,True,True,True,True,4961.8762508063,True,False,True
+239,DHI.N,D R Horton Inc,Cyclical Consumer Products,bad,False,False,False,False,False,False,True,True,,False,False,False
+240,GRMN.N,Garmin Ltd,Technology Equipment,bad,True,True,True,False,False,False,False,True,,True,True,True
+241,TFC.N,Truist Financial Corp,Banking & Investment Services,good,True,True,True,True,True,True,True,True,133.654226318622,False,no value,True
+242,AES.N,AES Corp,Utilities,bad,True,True,True,False,False,False,True,False,,True,False,True
+243,ODFL.OQ,Old Dominion Freight Line Inc,Transportation,bad,True,True,False,False,False,False,False,False,,True,True,False
+244,MOS.N,Mosaic Co,Chemicals,bad,True,True,True,True,True,True,True,False,14504.0717831761,True,True,True
+245,ETR.N,Entergy Corp,Utilities,bad,True,True,True,False,False,False,True,True,1676.19241981815,True,False,True
+246,NCLH.N,Norwegian Cruise Line Holdings Ltd,Cyclical Consumer Services,good,True,True,True,False,False,False,True,True,28486.8546542672,False,True,True
+247,COF.N,Capital One Financial Corp,Banking & Investment Services,bad,True,False,True,True,True,False,False,False,12.8582196823616,False,True,True
+248,QRVO.OQ,Qorvo Inc,Technology Equipment,good,True,True,True,True,True,True,False,True,313.425934894773,True,False,True
+249,A.N,Agilent Technologies Inc,Healthcare Services & Equipment,good,True,True,True,True,True,True,True,True,92.8412723532204,True,no value,True
+250,AVGO.OQ,Broadcom Inc,Technology Equipment,bad,True,True,True,False,False,False,False,True,64.7103580327868,False,False,True
+251,MET.N,MetLife Inc,Insurance,good,True,True,True,True,False,True,True,True,9.32009003939223,True,True,True
+252,CAH.N,Cardinal Health Inc,Pharmaceuticals & Medical Research,bad,True,True,True,False,False,False,True,False,22.7615454215317,True,False,True
+253,ARE.N,Alexandria Real Estate Equities Inc,Real Estate,bad,True,True,False,True,True,True,False,False,942778579.6866969,True,False,False
+254,BK.N,Bank of New York Mellon Corp,Banking & Investment Services,good,True,True,True,True,True,True,True,True,62.8391186993911,True,True,True
+255,NUE.N,Nucor Corp,Mineral Resources,bad,True,True,True,False,False,False,True,False,,True,False,True
+256,DUK.N,Duke Energy Corp,Utilities,bad,False,False,True,True,True,True,True,True,,True,False,True
+257,UPS.N,United Parcel Service Inc,Transportation,good,True,True,True,True,False,True,False,False,2318.33646838734,False,True,True
+258,SO.N,Southern Co,Utilities,bad,True,True,True,False,False,False,False,False,27654.0990625766,True,True,True
+259,SYK.N,Stryker Corp,Healthcare Services & Equipment,bad,True,True,True,False,False,False,True,True,,True,True,True
+260,BSX.N,Boston Scientific Corp,Healthcare Services & Equipment,good,True,True,True,True,False,True,True,True,120.222072678331,True,True,True
+261,CME.OQ,CME Group Inc,Banking & Investment Services,bad,False,True,False,False,False,False,False,False,,False,True,False
+262,SWK.N,Stanley Black & Decker Inc,Industrial Goods,good,True,True,True,True,True,True,True,True,285.839151704531,True,True,True
+263,PH.N,Parker-Hannifin Corp,Industrial Goods,bad,True,True,True,True,True,True,False,False,424.059773063091,False,False,False
+264,RL.N,Ralph Lauren Corp,Cyclical Consumer Products,good,True,True,True,True,True,False,True,True,138.537589450832,True,True,True
+265,PNR.N,Pentair PLC,Industrial Goods,good,True,True,True,True,True,False,True,True,270.865915852103,True,True,True
+266,POOL.OQ,Pool Corp,Cyclical Consumer Products,bad,True,True,True,False,False,False,False,False,,False,False,False
+267,ROK.N,Rockwell Automation Inc,Industrial Goods,bad,True,True,True,False,False,False,True,False,112.298853860005,False,True,True
+268,VRSK.OQ,Verisk Analytics Inc,Software & IT Services,bad,False,True,True,False,False,False,False,False,,False,True,True
+269,STT.N,State Street Corp,Banking & Investment Services,good,True,True,True,True,True,False,True,True,67.4822482747152,True,True,True
+270,IT.N,Gartner Inc,Software & IT Services,good,True,True,True,False,False,False,True,False,19.3142316369382,True,True,True
+271,SYY.N,Sysco Corp,Food & Drug Retailing,good,True,True,True,True,False,True,True,True,279.086635294301,True,True,True
+272,USB.N,US Bancorp,Banking & Investment Services,bad,False,True,True,False,False,False,True,False,,False,True,True
+273,AWK.N,American Water Works Company Inc,Utilities,good,True,True,True,True,True,False,True,True,1291.92,True,True,True
+274,MAS.N,Masco Corp,Cyclical Consumer Products,bad,True,False,True,False,False,False,False,False,225.375626043405,False,False,True
+275,VRTX.OQ,Vertex Pharmaceuticals Inc,Pharmaceuticals & Medical Research,bad,True,True,True,False,False,False,True,False,,True,True,True
+276,SNA.N,Snap-On Inc,Industrial Goods,bad,True,True,False,False,False,False,True,False,,False,False,True
+277,PKI.N,PerkinElmer Inc,Healthcare Services & Equipment,bad,True,True,True,False,False,False,True,False,,True,True,True
+278,NLOK.OQ,Gen Digital Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,49.8834048640915,True,True,True
+279,OKE.N,ONEOK Inc,Energy - Fossil Fuels,bad,True,True,True,False,False,False,True,False,,True,False,True
+280,CMI.N,Cummins Inc,Automobiles & Auto Parts,bad,True,True,True,True,True,False,True,False,677.794860834889,True,False,True
+281,GPC.N,Genuine Parts Co,Automobiles & Auto Parts,bad,True,True,True,False,False,False,False,True,142.859997339364,True,True,True
+282,ADI.OQ,Analog Devices Inc,Technology Equipment,bad,True,True,True,True,True,False,True,False,,True,True,True
+283,FMC.N,FMC Corp,Chemicals,good,True,True,True,True,True,True,True,True,428.722349956394,True,False,True
+284,PM.N,Philip Morris International Inc,Food & Beverages,good,True,True,True,True,True,True,False,True,245.857857029135,True,False,True
+285,CLX.N,Clorox Co,Personal & Household Products & Services,bad,True,True,True,False,False,False,True,True,369.825918108906,True,True,True
+286,ISRG.OQ,Intuitive Surgical Inc,Healthcare Services & Equipment,bad,True,True,True,False,False,False,True,False,,True,True,True
+287,NVDA.OQ,NVIDIA Corp,Technology Equipment,good,True,True,True,True,False,True,True,False,70.3590044977511,True,True,True
+288,BWA.N,Borgwarner Inc,Automobiles & Auto Parts,good,True,True,True,True,True,True,True,False,388.160695511524,True,True,True
+289,HCA.N,HCA Healthcare Inc,Healthcare Services & Equipment,bad,True,True,False,False,False,False,True,True,,True,True,True
+290,AEE.N,Ameren Corp,Utilities,bad,True,True,False,True,True,True,True,False,,True,True,False
+291,NDSN.OQ,Nordson Corp,Industrial Goods,bad,True,True,True,False,False,False,True,True,907471828.8486744,False,True,True
+292,TYL.N,Tyler Technologies Inc,Software & IT Services,bad,True,True,True,False,False,False,True,True,,True,True,True
+293,BKNG.OQ,Booking Holdings Inc,Cyclical Consumer Services,bad,True,True,True,False,False,False,False,False,31.2485125022814,True,True,False
+294,AAP.N,Advance Auto Parts Inc,Retailers,bad,False,True,False,False,False,False,True,False,252.657210401891,True,False,False
+295,CSGP.OQ,CoStar Group Inc,Software & IT Services,bad,True,True,False,False,False,False,False,False,,False,True,False
+296,GWW.N,WW Grainger Inc,Industrial Goods,good,True,True,True,False,False,False,False,True,107.959108247859,True,True,True
+297,MO.N,Altria Group Inc,Food & Beverages,good,True,True,True,True,True,True,True,True,148.040172221581,True,False,True
+298,IVZ.N,Invesco Ltd,Banking & Investment Services,bad,True,True,False,False,False,False,True,False,18.6237099136993,True,True,False
+299,MDT.N,Medtronic PLC,Healthcare Services & Equipment,good,True,True,True,True,True,True,True,True,102.435144858928,True,True,True
+300,PFE.N,Pfizer Inc,Pharmaceuticals & Medical Research,good,True,True,True,True,True,False,True,True,201.016961913197,True,True,True
+301,SYF.N,Synchrony Financial,Banking & Investment Services,good,True,True,True,False,False,False,True,False,5.36854619565217,False,True,True
+302,XYL.N,Xylem Inc,Industrial Goods,good,True,True,True,True,True,True,True,True,270.601501443695,True,True,True
+303,GOOGL.OQ,Alphabet Inc,Software & IT Services,good,True,True,True,True,True,False,False,True,259.504544766473,True,True,True
+304,KR.N,Kroger Co,Food & Drug Retailing,good,True,True,True,False,False,False,True,True,300.85349816601,True,True,True
+305,INTU.OQ,Intuit Inc,Financial Technology (Fintech) & Infrastructure,good,True,True,True,False,False,False,True,True,,True,True,True
+306,PSX.N,Phillips 66,Energy - Fossil Fuels,good,True,True,True,True,False,True,True,True,4637.58477161003,True,True,True
+307,MKC.N,McCormick & Company Inc,Food & Beverages,good,True,True,True,True,True,False,True,True,247.26146346096,True,True,True
+308,DAL.N,Delta Air Lines Inc,Transportation,good,False,True,True,True,False,True,True,True,31574.9521789997,True,True,True
+309,CHTR.OQ,Charter Communications Inc,Telecommunications Services,bad,False,True,False,False,False,False,False,False,,True,True,False
+310,ON.OQ,ON Semiconductor Corp,Technology Equipment,bad,True,True,True,False,False,False,True,True,951.670079230837,False,False,True
+311,CE.N,Celanese Corp,Chemicals,bad,True,True,True,True,True,True,False,True,9150.14040671971,True,no value,True
+312,HSIC.OQ,Henry Schein Inc,Healthcare Services & Equipment,bad,True,True,True,False,False,False,False,True,,True,True,True
+313,AME.N,AMETEK Inc,Industrial Goods,bad,False,False,False,False,False,False,True,False,188.879850767473,True,False,False
+314,ETN.N,Eaton Corporation PLC,Industrial Goods,good,True,True,True,True,True,False,True,True,469.731547177501,True,False,True
+315,MKTX.OQ,Marketaxess Holdings Inc,Banking & Investment Services,bad,True,True,False,False,False,False,False,False,,False,True,False
+316,NWS.OQ,News Corp,Cyclical Consumer Services,bad,False,True,True,False,False,False,True,True,,False,True,True
+317,STE.N,STERIS plc,Healthcare Services & Equipment,bad,False,True,True,False,False,False,True,False,,False,False,True
+318,DHR.N,Danaher Corp,Healthcare Services & Equipment,good,True,True,True,True,False,True,True,True,175.657454249142,True,False,True
+319,HPQ.N,HP Inc,Technology Equipment,good,True,True,True,True,True,False,True,True,39.5263408256808,True,True,True
+320,PLD.N,Prologis Inc,Real Estate,bad,True,True,True,True,False,True,False,False,4772.61635822701,True,False,True
+321,HII.N,Huntington Ingalls Industries Inc,Industrial Goods,bad,True,True,True,False,False,False,False,False,283.251259974801,True,False,True
+322,LUMN.N,Lumen Technologies Inc,Telecommunications Services,bad,True,True,True,False,False,False,True,True,955.07387961599,True,False,True
+323,NTAP.OQ,NetApp Inc,Technology Equipment,bad,True,True,True,True,True,True,True,True,121.366848189415,True,True,True
+324,CAT.N,Caterpillar Inc,Industrial Goods,good,True,True,True,True,True,False,True,True,404.151380196582,True,True,True
+325,CPB.N,Campbell Soup Co,Food & Beverages,good,True,True,True,True,True,False,True,True,1318.50870611137,True,True,True
+326,NEM.N,Newmont Corporation,Mineral Resources,good,True,True,True,True,True,True,True,True,3198.48150057273,True,False,True
+327,PFG.OQ,Principal Financial Group Inc,Banking & Investment Services,good,True,True,True,False,False,False,True,True,18.5508774635938,True,True,True
+328,WST.N,West Pharmaceutical Services Inc,Healthcare Services & Equipment,good,True,True,True,True,True,True,False,True,582.072336488204,True,True,True
+329,HON.OQ,Honeywell International Inc,Consumer Goods Conglomerates,good,True,True,True,False,False,False,True,False,467.740718771807,True,True,True
+330,YUM.N,Yum! Brands Inc,Cyclical Consumer Services,good,True,True,True,True,True,True,True,True,244.55340218712,True,True,True
+331,AMP.N,Ameriprise Financial Inc,Banking & Investment Services,bad,False,True,False,False,False,False,False,False,20.8225440749832,True,True,False
+332,UDR.N,UDR Inc,Real Estate,bad,True,True,False,True,True,True,True,False,555.280531000875,True,True,False
+333,AMT.N,American Tower Corp,Real Estate,good,True,True,True,True,False,True,True,True,1305.09762848806,True,no value,True
+334,HD.N,Home Depot Inc,Retailers,good,True,True,True,False,False,False,True,True,153.479362517117,True,True,True
+335,LVS.N,Las Vegas Sands Corp,Cyclical Consumer Services,good,True,True,True,True,True,False,True,True,1085.21823334907,True,True,True
+336,IP.N,International Paper Co,Applied Resources,good,True,True,True,True,True,True,True,True,21239.6768579249,True,False,True
+337,TROW.OQ,T Rowe Price Group Inc,Banking & Investment Services,bad,True,True,True,False,False,False,False,True,,True,False,True
+338,GD.N,General Dynamics Corp,Industrial Goods,bad,True,True,True,False,False,False,True,True,,True,True,True
+339,TSCO.OQ,Tractor Supply Co,Retailers,good,True,True,True,True,True,False,True,True,222.351485731791,True,True,True
+340,FBHS.N,Fortune Brands Home & Security Inc,Cyclical Consumer Products,good,True,True,True,False,False,False,True,True,424.498112616083,False,False,True
+341,COO.N,Cooper Companies Inc,Healthcare Services & Equipment,bad,True,True,True,False,False,False,False,True,443.660063301967,True,True,True
+342,DOV.N,Dover Corp,Industrial Goods,good,False,True,True,True,False,True,False,False,,True,True,True
+343,GLW.N,Corning Inc,Technology Equipment,bad,True,True,True,False,False,False,True,True,1917.34128674904,True,True,True
+344,CNP.N,CenterPoint Energy Inc,Utilities,bad,True,True,False,False,False,False,True,False,2531.34655172413,True,True,False
+345,RCL.N,Royal Caribbean Cruises Ltd,Cyclical Consumer Services,bad,True,True,True,False,False,False,True,True,9943.88361300934,True,True,True
+346,EOG.N,EOG Resources Inc,Energy - Fossil Fuels,good,True,True,True,False,False,False,True,False,139.361073825503,True,True,True
+347,VTRS.OQ,Viatris Inc,Pharmaceuticals & Medical Research,good,True,True,True,False,False,False,True,True,377.585079082873,True,False,True
+348,URI.N,United Rentals Inc,Industrial & Commercial Services,good,True,True,True,False,False,False,True,True,611.936640592836,True,False,True
+349,DXCM.OQ,Dexcom Inc,Healthcare Services & Equipment,bad,True,True,True,False,False,False,True,False,,False,False,True
+350,GM.N,General Motors Co,Automobiles & Auto Parts,good,True,True,True,True,True,True,True,True,355.817738023999,True,True,True
+351,VZ.N,Verizon Communications Inc,Telecommunications Services,good,True,True,True,True,False,True,True,True,305.378241638163,True,True,True
+352,EPAM.N,Epam Systems Inc,Software & IT Services,bad,False,True,False,False,False,False,False,False,,False,True,False
+353,MU.OQ,Micron Technology Inc,Technology Equipment,good,True,True,True,True,True,True,True,True,1353.75995668651,True,True,True
+354,RMD.N,Resmed Inc,Healthcare Services & Equipment,good,True,True,True,True,True,True,True,True,52.3449792450646,True,True,True
+355,NEE.N,Nextera Energy Inc,Utilities,good,True,True,True,False,False,False,True,True,,False,True,True
+356,VLO.N,Valero Energy Corp,Energy - Fossil Fuels,bad,True,True,True,False,False,False,True,False,,True,False,False
+357,FRT.N,Federal Realty Investment Trust,Real Estate,bad,True,True,False,True,False,True,False,False,350.125034692144,True,True,False
+358,LIN.N,Linde PLC,Chemicals,good,True,True,True,True,True,True,True,True,8527.74331828662,True,True,True
+359,AOS.N,A O Smith Corp,Industrial Goods,bad,True,True,True,False,False,False,True,True,644.810693192415,True,True,True
+360,SBAC.OQ,SBA Communications Corp,Real Estate,bad,True,True,True,True,False,True,True,False,111.120712002073,True,False,True
+361,RHI.N,Robert Half International Inc,Industrial & Commercial Services,good,False,True,True,False,False,False,True,True,5.93143324088748,True,False,True
+362,T.N,AT&T Inc,Telecommunications Services,good,True,True,True,True,True,False,True,True,361.95405059693,True,True,True
+363,KIM.N,Kimco Realty Corp,Real Estate,bad,True,True,True,True,True,False,True,False,398.886405440462,True,False,True
+364,HIG.N,Hartford Financial Services Group Inc,Insurance,good,True,True,True,True,True,True,True,False,14.8664403751674,True,True,True
+365,IEX.N,IDEX Corp,Industrial Goods,bad,False,True,True,False,False,False,True,True,108.617134551713,True,False,True
+366,CBRE.N,CBRE Group Inc,Real Estate,bad,False,True,True,False,False,False,True,True,35.7172205002522,True,True,True
+367,IRM.N,Iron Mountain Inc,Real Estate,good,False,True,True,False,False,False,True,True,1284.27953810579,True,True,True
+368,CPT.N,Camden Property Trust,Real Estate,bad,True,True,False,True,True,True,False,False,,False,True,False
+369,DIS.N,Walt Disney Co,Cyclical Consumer Services,good,True,True,True,False,False,False,True,True,208.679640452104,True,True,True
+370,MA.N,Mastercard Inc,Software & IT Services,good,False,True,True,False,False,False,True,True,,True,True,True
+371,EXPD.OQ,Expeditors International of Washington Inc,Transportation,bad,True,True,False,False,False,False,True,False,34.4015671061903,False,True,False
+372,BAX.N,Baxter International Inc,Healthcare Services & Equipment,good,True,True,True,True,True,True,True,True,844.102002503128,True,True,True
+373,ROL.N,Rollins Inc,Industrial & Commercial Services,bad,False,True,False,False,False,False,False,False,,False,False,False
+374,CTSH.OQ,Cognizant Technology Solutions Corp,Software & IT Services,good,True,True,True,False,False,False,True,True,34.8604311881991,True,True,True
+375,PPG.N,PPG Industries Inc,Chemicals,bad,True,True,True,True,True,True,False,False,755.385282636981,True,False,True
+376,TPR.N,Tapestry Inc,Retailers,good,True,True,True,True,True,False,False,True,,True,True,True
+377,EMN.N,Eastman Chemical Co,Chemicals,bad,True,True,True,True,False,True,True,True,11327.0329896907,True,False,True
+378,GOOG.OQ,Alphabet Inc,Software & IT Services,good,True,True,True,True,True,False,False,True,259.504544766473,True,True,True
+379,BALL.N,Ball Corp,Applied Resources,good,True,True,True,True,True,True,True,True,1269.6129462023,True,False,True
+380,VMC.N,Vulcan Materials Co,Mineral Resources,bad,True,True,False,True,False,True,True,False,2597.99610965022,False,False,False
+381,ACN.N,Accenture PLC,Software & IT Services,good,True,True,True,False,False,False,True,True,21.3305417802878,True,False,True
+382,OMC.N,Omnicom Group Inc,Cyclical Consumer Services,bad,False,True,True,True,False,True,True,False,25.1700701219085,True,False,False
+383,ADM.N,Archer-Daniels-Midland Co,Food & Beverages,good,True,True,True,True,True,True,True,True,2457.27691820431,True,False,True
+384,SBNY.OQ,Signature Bank,Banking & Investment Services,bad,False,True,False,False,False,False,False,False,,False,False,False
+385,EIX.N,Edison International,Utilities,bad,True,True,True,True,False,True,False,False,,True,True,True
+386,BKR.OQ,Baker Hughes Co,Energy - Fossil Fuels,good,True,True,True,False,False,False,True,True,464.209657594381,True,True,True
+387,NWL.OQ,Newell Brands Inc,Cyclical Consumer Products,good,True,True,True,False,False,False,True,True,,True,False,True
+388,LH.N,Laboratory Corporation of America Holdings,Healthcare Services & Equipment,bad,False,True,True,False,False,False,False,False,,False,False,True
+389,UHS.N,Universal Health Services Inc,Healthcare Services & Equipment,bad,False,True,False,False,False,False,False,False,,False,no value,False
+390,WBD.OQ,Warner Bros Discovery Inc,Cyclical Consumer Services,bad,True,True,False,False,False,False,False,False,,False,True,False
+391,DVA.N,DaVita Inc,Healthcare Services & Equipment,good,True,True,True,True,True,False,False,False,952853901.6252261,True,True,True
+392,RSG.N,Republic Services Inc,Industrial & Commercial Services,bad,True,True,True,False,False,False,True,True,3236.61750863213,True,False,True
+393,HUM.N,Humana Inc,Healthcare Services & Equipment,good,True,True,True,False,False,False,True,True,10.808118722053,True,True,True
+394,WMB.N,Williams Companies Inc,Energy - Fossil Fuels,good,True,False,True,False,False,False,True,False,1381.12355321351,True,False,True
+395,LYB.N,LyondellBasell Industries NV,Chemicals,bad,True,True,True,True,False,True,True,True,8966.2789942174,False,False,True
+396,AMZN.OQ,Amazon.com Inc,Retailers,good,True,True,True,False,False,False,True,True,,True,True,True
+397,CRM.N,Salesforce Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,131.620553359683,True,True,True
+398,TRV.N,Travelers Companies Inc,Insurance,bad,True,True,True,False,False,False,False,True,,True,True,True
+399,AAPL.OQ,Apple Inc,Technology Equipment,good,True,True,True,True,False,True,True,True,32.9944644453374,True,True,True
+400,CVS.N,CVS Health Corp,Healthcare Services & Equipment,good,True,True,True,True,True,True,True,True,40.831697810079,True,True,True
+401,CL.N,Colgate-Palmolive Co,Personal & Household Products & Services,good,True,True,True,True,True,True,True,True,397.613235383401,True,True,True
+402,ETSY.OQ,ETSY Inc,Retailers,bad,False,True,True,True,False,True,False,False,23.9761969164187,True,False,True
+403,JCI.N,Johnson Controls International PLC,Industrial Goods,good,True,True,True,True,True,True,True,True,3738.7380851783,True,no value,True
+404,CHD.N,Church & Dwight Co Inc,Personal & Household Products & Services,good,True,True,True,True,True,True,True,True,328.444789411332,True,True,True
+405,COP.N,Conocophillips,Energy - Fossil Fuels,bad,True,True,True,True,True,True,True,False,5064.87736754822,True,False,True
+406,SNPS.OQ,Synopsys Inc,Software & IT Services,good,True,True,True,False,False,False,True,True,,True,True,True
+407,CF.N,CF Industries Holdings Inc,Chemicals,bad,True,True,True,False,False,False,True,True,55261.2633273172,True,False,True
+408,CI.N,Cigna Corp,Healthcare Services & Equipment,good,True,True,True,True,True,False,True,False,6.2514041107681,True,True,True
+409,FIS.N,Fidelity National Information Services Inc,Financial Technology (Fintech) & Infrastructure,good,True,True,True,False,False,False,True,True,44.6336362326151,True,True,True
+410,FTNT.OQ,Fortinet Inc,Software & IT Services,bad,True,True,True,False,False,False,False,True,970864901.7402514,True,True,False
+411,TXN.OQ,Texas Instruments Inc,Technology Equipment,good,True,True,True,True,True,True,True,True,625.184823375491,True,True,True
+412,CTAS.OQ,Cintas Corp,Industrial & Commercial Services,bad,True,True,True,False,False,False,False,False,996.758586576807,False,False,True
+413,TXN.OQ,Texas Instruments Inc,Technology Equipment,good,True,True,True,True,True,True,True,True,625.184823375491,True,True,True
+414,CTAS.OQ,Cintas Corp,Industrial & Commercial Services,bad,True,True,True,False,False,False,False,False,996.758586576807,False,False,True
+415,RWEG.DE,RWE AG,Utilities,good,True,True,True,True,False,True,True,True,1356.69022713578,True,False,True
+416,STZ.N,Constellation Brands Inc,Food & Beverages,bad,True,True,True,False,False,False,False,False,592.874488419286,True,False,False
+417,NAPA.N,Duckhorn Portfolio Inc,Food & Beverages,bad,True,True,False,True,True,False,False,False,,True,True,False
+418,DG.N,Dollar General Corp,Retailers,bad,False,False,False,False,False,False,False,False,,False,False,True
+419,HYFM.OQ,Hydrofarm Holdings Group Inc,Industrial Goods,bad,False,False,True,False,False,False,False,False,,False,False,False
+420,MNST.OQ,Monster Beverage Corp,Food & Beverages,bad,True,True,False,False,False,False,False,False,21.1653117020221,True,True,False
+421,REYN.OQ,Reynolds Consumer Products Inc,Cyclical Consumer Products,bad,False,True,False,False,False,False,True,False,,False,False,False
