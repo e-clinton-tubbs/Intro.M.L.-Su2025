@@ -14,6 +14,14 @@ df = pd.read_csv("C:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/Resource Use
 
 #WORKSPACE
 #    1. exploratory data analysis & data cleaning
+ 
+df.info()      # column dtypes & non-null counts //COPILOT
+df.head()      # peek at first rows  //COPILOT
+df.describe()  # stats on numeric cols  //COPILOT
+
+df = df.dropna(axis=0, thresh=int(0.6*len(df.columns))) #handling missing values by dropping them as N/A? //COPILOT
+
+
 #    2. data preprocessing
 #    3. fit the neural network
 #    4. model diagnostic
