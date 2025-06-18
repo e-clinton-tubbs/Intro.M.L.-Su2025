@@ -5,6 +5,7 @@
 # WHOSE: Simin.tahmasebi.gandomkari; chujie.wang; winnie.tan; eric.tubbs
 
 #MODS. IMPORT
+import numpy as np #chujie.wang suggestion
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
