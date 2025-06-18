@@ -39,6 +39,13 @@ print(df['Resource Use Score'].value_counts())
 # Summary stats of data
 print(df.iloc[:,1:].describe())  # only summary stats for numeric columns
 
+# var. hardcoding
+# 1. resource use score
+# assume df['level'] contains strings "good" & "bad"
+df['level_bin'] = df['Resource Use Score'].map({'bad': 0, 'good': 1})
+# if any other values, they’ll become NaN – you can .fillna(…) or check .isna()
+
+
 #    3. fit the neural network
 
 # Split the data into features (X) and target (y)
