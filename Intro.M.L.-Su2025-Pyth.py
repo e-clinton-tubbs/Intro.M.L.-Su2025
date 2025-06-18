@@ -39,12 +39,36 @@ print(df['Resource Use Score'].value_counts())
 # Summary stats of data
 print(df.iloc[:,1:].describe())  # only summary stats for numeric columns
 
-# var. hardcoding
-# 1. resource use score
+# var. hardcoding loop 
+# 2.1 resource use score (bad(0)/good(1))
 # assume df['level'] contains strings "good" & "bad"
 df['level_bin'] = df['Resource Use Score'].map({'bad': 0, 'good': 1})
 # if any other values, they’ll become NaN – you can .fillna(…) or check .isna()
 
+# 2.2 Policy Water Efficiency (FALSE(0)/TRUE(1))
+
+# 2.3 Policy Energy Efficiency (FALSE(0)/TRUE(1))
+
+# 2.4 Policy Environmental Supply Chain (FALSE(0)/TRUE(1))
+
+# 2.5 Resource Reduction Targets (FALSE(0)/TRUE(1))
+
+# 2.6 Targets Water Efficiency (FALSE(0)/TRUE(1))
+
+# 2.7 Targets Energy Efficiency (FALSE(0)/TRUE(1))
+
+# 2.8 Environment Management Training (FALSE(0)/TRUE(1))
+
+# 2.9 Total Energy Use To Revenues USD in million
+# normalization
+
+# 2.9 Environmental Materials Sourcing (FALSE(0)/TRUE(1))
+
+# 2.10 Renewable Energy Use (FALSE(0)/TRUE(1))
+
+# 2.11 Green Buildings (FALSE(0)/TRUE(1))
+
+# 2.12 Environmental Supply Chain Management
 
 #    3. fit the neural network
 

@@ -7,7 +7,7 @@ algorithm: neural network
 
 //INTRO. M.L. GROUP SCHEUDLE
     15:00 on 06/18/2025 - checkpoint - data cleaning 
-    06/24/2025 - checkpoint for network
+    15:00 on 06/25/2025 - checkpoint for network
     07/02/2025 - paper & presentation done
     07/06/2025 - PAPER & PRESENTATION DUE
     07/08/2025 - CLASS PRESENTATION
