@@ -57,3 +57,7 @@ from sklearn.preprocessing import StandardScaler
 #    5. plot it
 #    6. profit
 #END
+
+
+from google.colab import files
+uploaded = files.upload()
