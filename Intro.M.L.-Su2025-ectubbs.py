@@ -97,19 +97,55 @@ print(df.isnull().sum())
 
 #    3. fit the neural network
 
+# %%
 # Split the data into features (X) and target (y)
 from sklearn.model_selection import train_test_split
-
-#X = df.drop('deposit_new', axis=1)
-#y = df['deposit_new']
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-#0
-# %%
-# scaling data
+# --- after df is preprocessed and missing rows dropped --
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.neural_network import MLPClassifier
+
+
+# Split
+X = df.drop(columns='rus_bin')
+y = df['rus_bin']
+
+# Ensure numeric
+assert all(dtype.kind in 'biuf' for dtype in X.dtypes), "All X columns must be numeric"
+
+# Train/test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Scale
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Fit MLP
+clf = MLPClassifier(
+    random_state=1,
+    hidden_layer_sizes=(5,),
+    max_iter=200,
+    activation="logistic",
+    solver="adam",
+    learning_rate="constant",
+    learning_rate_init=0.001,
+    alpha=0.0001,
+    early_stopping=True
+)
+clf.fit(X_train_scaled, y_train)
+
+# Evaluate
+y_pred = clf.predict(X_test_scaled)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
 
 
 #    4. model diagnostic
 #    5. plot it
 #    6. profit
 #END
+# %%
