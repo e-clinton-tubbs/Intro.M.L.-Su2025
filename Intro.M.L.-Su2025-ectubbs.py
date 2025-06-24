@@ -110,8 +110,9 @@ from sklearn.neural_network import MLPClassifier
 X = df.drop(columns='rus_bin')
 y = df['rus_bin']
 
-# Ensure numeric
-assert all(dtype.kind in 'biuf' for dtype in X.dtypes), "All X columns must be numeric"
+X = X.select_dtypes(include=['number'])
+print(X.dtypes)  # Should now list only numeric dtypes
+
 
 # Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
@@ -119,32 +120,216 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Scale
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
+#scaler = StandardScaler()
+#X_train_scaled = scaler.fit_transform(X_train)
+#X_test_scaled = scaler.transform(X_test)
 
 # Fit MLP
-clf = MLPClassifier(
-    random_state=1,
-    hidden_layer_sizes=(5,),
-    max_iter=200,
-    activation="logistic",
-    solver="adam",
-    learning_rate="constant",
-    learning_rate_init=0.001,
-    alpha=0.0001,
-    early_stopping=True
-)
-clf.fit(X_train_scaled, y_train)
+#clf = MLPClassifier(
+#    random_state=1,
+#    hidden_layer_sizes=(5,),
+#    max_iter=200,
+#    activation="logistic",
+#    solver="adam",
+#    learning_rate="constant",
+#    learning_rate_init=0.001,
+#    alpha=0.0001,
+#    early_stopping=True
+#)
+#clf.fit(X_train_scaled, y_train)
 
 # Evaluate
-y_pred = clf.predict(X_test_scaled)
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
-print(classification_report(y_test, y_pred))
+#y_pred = clf.predict(X_test_scaled)
+#print("Accuracy:", accuracy_score(y_test, y_pred))
+#print(confusion_matrix(y_test, y_pred))
+#print(classification_report(y_test, y_pred))
+
+# %%
+# scaling data
+from sklearn.preprocessing import StandardScaler
+
+
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+#%%
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+# Instantiate and train the neural network with specified parameters
+clf = MLPClassifier(random_state=1, 
+                    hidden_layer_sizes=(5,),  # One hidden layer with 5 neurons
+                    max_iter=200,  
+                    activation = "logistic",  # Sigmoid activation function
+                    solver = "adam",  # Adam optimizer (stochastic gradient descent method)
+                    learning_rate="constant",
+                    learning_rate_init=0.001,
+                    alpha=0.0001,  # Regularization term
+                    early_stopping=True).fit(X_train, y_train)
+
+# Predict on the test set
+y_test_pred = clf.predict(X_test)
+# Calculate predicted probabilities (for further analysis if needed)
+clf.predict_proba(X_test)
+
+#%%
+# Extract and print weights and biases of the trained neural network
+print(f'Weights between the input and the hidden layer: {clf.coefs_[0]}')  
+print(f'Weights between the hidden layer and the output: {clf.coefs_[1]}')
+
+print(f'Value of w_0: {clf.coefs_[0][0][0]}')
+print(f'Value of w_1: {clf.coefs_[0][1][0]}')
+
+print(f'Bias values of first hidden layer: {clf.intercepts_[0]}')
+print(f'Bias values of first hidden layer: {clf.intercepts_[1]}')
+
+# Print model parameters and evaluation metrics
+params = clf.get_params()
+
+print(f'Accuracy: {accuracy_score(y_test, y_test_pred)}')
+print(f'Confusion Matrix: {confusion_matrix(y_test, y_test_pred)}')
+print(f'Classification Report: {classification_report(y_test, y_test_pred)}')
+
+# Visualize the confusion matrix using a heatmap
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+
+conf_matrix = confusion_matrix(y_test, y_test_pred)
+sns.heatmap(conf_matrix, annot=True, fmt='d')
+plt.xlabel("Actual")
+plt.ylabel("Predicted")
+plt.show()
+
+#%%
+layer_coefs = clf.coefs_
+layer_intercepts = clf.intercepts_
+iterations = clf.n_iter_
+
+# Plot the loss curve to visualize loss decay over iterations
+plt.plot(clf.loss_curve_)
+plt.title("Loss Curve", fontsize=14)
+plt.xlabel('Iterations')
+plt.ylabel('Cost')
+plt.show()
+
+#%%
+# Perform hyperparameter tuning using GridSearchCV
+from sklearn.model_selection import GridSearchCV
+param_grid = {
+    'hidden_layer_sizes': [(150,100,50), (120,80,40), (100,50,30)], 
+    'max_iter': [200, 250, 300],
+    'activation': ['logistic', 'relu'],
+    'solver': ['sgd', 'adam'],
+    'alpha': [0.0001, 0.05],
+    'learning_rate': ['constant','adaptive'],
+}
+
+# Grid search with cross-validation
+grid = GridSearchCV(clf, param_grid, n_jobs= -1, cv=5, verbose=2)
+grid.fit(X_train, y_train)
+
+# Print the best hyperparameters
+print(grid.best_params_) 
+
+# Predict using the best model from GridSearchCV
+grid_predictions = grid.predict(X_test) 
+
+# Print the accuracy of the grid search model
+print('Accuracy: {:.2f}'.format(accuracy_score(y_test, grid_predictions)))
+
+
+
+# %%
 
 
 #    4. model diagnostic
+
+#4.1.error propagation
+
+import numpy as np
+
+class SimpleMLP:
+    def __init__(self, n_inputs, n_hidden=5, lr=0.001, seed=42):
+        rng = np.random.RandomState(seed)
+        # Step 1: initialize weights in (0,1)
+        self.W1 = rng.rand(n_inputs, n_hidden)      # input → hidden
+        self.b1 = rng.rand(n_hidden)                # hidden biases
+        self.W2 = rng.rand(n_hidden, 1)             # hidden → output
+        self.b2 = rng.rand(1)                       # output bias
+        self.lr = lr
+
+    def _sigmoid(self, z):
+        return 1 / (1 + np.exp(-z))
+
+    def _dsigmoid(self, a):
+        # derivative of sigmoid given activation a
+        return a * (1 - a)
+
+    def fit(self, X, y, epochs=1000, tol=1e-4):
+        """
+        X: array-like, shape (n_samples, n_inputs)
+        y: array-like, shape (n_samples,) with values 0 or 1
+        """
+        n_samples = X.shape[0]
+        for epoch in range(epochs):
+            loss = 0
+            for xi, yi in zip(X, y):
+                # --- forward pass (step 4) ---
+                z1 = xi.dot(self.W1) + self.b1           # hidden linear
+                a1 = self._sigmoid(z1)                   # hidden activation
+                z2 = a1.dot(self.W2) + self.b2           # output linear
+                a2 = self._sigmoid(z2).ravel()           # output activation
+
+                # accumulate simple squared‐error loss
+                loss += 0.5 * (yi - a2)**2
+
+                # --- backward pass (step 5 & 6) ---
+                # step 5: delta for output layer
+                delta2 = (yi - a2) * self._dsigmoid(a2)   # shape (1,)
+
+                # step 6: delta for hidden layer
+                # sum over downstream weights * delta2, then * sigmoid’
+                delta1 = self._dsigmoid(a1) * (self.W2.ravel() * delta2)
+
+                # --- parameter updates (step 7) ---
+                # hidden→output weights & output bias
+                self.W2 += self.lr * np.outer(a1, delta2)   # (n_hidden,1)
+                self.b2 += self.lr * delta2
+
+                # input→hidden weights & hidden biases
+                self.W1 += self.lr * np.outer(xi, delta1)    # (n_inputs,n_hidden)
+                self.b1 += self.lr * delta1
+
+            # average loss over dataset
+            loss /= n_samples
+            if loss < tol:
+                print(f’Converged at epoch {epoch}, loss={loss:.6f}’)
+                break
+
+    def predict_proba(self, X):
+        z1 = X.dot(self.W1) + self.b1
+        a1 = self._sigmoid(z1)
+        z2 = a1.dot(self.W2) + self.b2
+        return self._sigmoid(z2).ravel()
+
+    def predict(self, X, threshold=0.5):
+        return (self.predict_proba(X) >= threshold).astype(int)
+
+
+# --- USAGE EXAMPLE ---
+# after you’ve preprocessed and split your DataFrame:
+# X_train, X_test are numpy arrays, y_train, y_test are 0/1 vectors
+
+# Initialize & train
+mlp = SimpleMLP(n_inputs=X_train.shape[1], n_hidden=5, lr=0.001)
+mlp.fit(X_train, y_train, epochs=200)
+
+# Evaluate
+y_pred = mlp.predict(X_test)
+acc = (y_pred == y_test).mean()
+print("Test accuracy:", acc)
+
+
 #    5. plot it
 #    6. profit
 #END
