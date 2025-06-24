@@ -97,7 +97,6 @@ print(df.isnull().sum())
 
 #    3. fit the neural network
 
-# %%
 # Split the data into features (X) and target (y)
 from sklearn.model_selection import train_test_split
 # --- after df is preprocessed and missing rows dropped --
@@ -105,54 +104,48 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPClassifier
 
-
 # Split
+
+# 0) Print out your actual column names so you can see exactly what Pandas sees:
+print(df.columns.tolist())
+
+# 1) drop rows that are missing the features you care about
+to_keep = [
+  'Total Energy Use To Revenues USD in million',
+  'pwe_bin','pee_bin','pesc_bin','rrt_bin',
+  'twe_bin','tee_bin','emt_bin','ems_bin',
+  'reu_bin','gb_bin','escm_bin'
+]
+df = df.dropna(subset=to_keep)
+
+# 2) pick X & y
 X = df.drop(columns='rus_bin')
 y = df['rus_bin']
 
+# 3) keep only numeric features
 X = X.select_dtypes(include=['number'])
-print(X.dtypes)  # Should now list only numeric dtypes
 
-
-# Train/test split
+# now you can split & scale without error
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# Scale
-#scaler = StandardScaler()
-#X_train_scaled = scaler.fit_transform(X_train)
-#X_test_scaled = scaler.transform(X_test)
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test  = scaler.transform(X_test)
 
-# Fit MLP
-#clf = MLPClassifier(
-#    random_state=1,
-#    hidden_layer_sizes=(5,),
-#    max_iter=200,
-#    activation="logistic",
-#    solver="adam",
-#    learning_rate="constant",
-#    learning_rate_init=0.001,
-#    alpha=0.0001,
-#    early_stopping=True
-#)
-#clf.fit(X_train_scaled, y_train)
+print(X.columns)
+print(X.dtypes)
 
-# Evaluate
-#y_pred = clf.predict(X_test_scaled)
-#print("Accuracy:", accuracy_score(y_test, y_pred))
-#print(confusion_matrix(y_test, y_pred))
-#print(classification_report(y_test, y_pred))
-
-# %%
 # scaling data
 from sklearn.preprocessing import StandardScaler
-
 
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
-#%%
+
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
@@ -172,7 +165,6 @@ y_test_pred = clf.predict(X_test)
 # Calculate predicted probabilities (for further analysis if needed)
 clf.predict_proba(X_test)
 
-#%%
 # Extract and print weights and biases of the trained neural network
 print(f'Weights between the input and the hidden layer: {clf.coefs_[0]}')  
 print(f'Weights between the hidden layer and the output: {clf.coefs_[1]}')
@@ -200,7 +192,6 @@ plt.xlabel("Actual")
 plt.ylabel("Predicted")
 plt.show()
 
-#%%
 layer_coefs = clf.coefs_
 layer_intercepts = clf.intercepts_
 iterations = clf.n_iter_
@@ -212,7 +203,6 @@ plt.xlabel('Iterations')
 plt.ylabel('Cost')
 plt.show()
 
-#%%
 # Perform hyperparameter tuning using GridSearchCV
 from sklearn.model_selection import GridSearchCV
 param_grid = {
@@ -237,100 +227,85 @@ grid_predictions = grid.predict(X_test)
 # Print the accuracy of the grid search model
 print('Accuracy: {:.2f}'.format(accuracy_score(y_test, grid_predictions)))
 
-
-
-# %%
-
-
 #    4. model diagnostic
 
 #4.1.error propagation
 
 import numpy as np
 
-class SimpleMLP:
+class BackpropMLP:
     def __init__(self, n_inputs, n_hidden=5, lr=0.001, seed=42):
         rng = np.random.RandomState(seed)
-        # Step 1: initialize weights in (0,1)
-        self.W1 = rng.rand(n_inputs, n_hidden)      # input → hidden
-        self.b1 = rng.rand(n_hidden)                # hidden biases
-        self.W2 = rng.rand(n_hidden, 1)             # hidden → output
-        self.b2 = rng.rand(1)                       # output bias
+        # 1) randomly initialize weights & thresholds (biases) from (0,1)
+        self.W1 = rng.rand(n_inputs, n_hidden)    # input → hidden weights
+        self.b1 = rng.rand(n_hidden)              # hidden thresholds
+        self.W2 = rng.rand(n_hidden, 1)           # hidden → output weights
+        self.b2 = rng.rand(1)                     # output threshold
         self.lr = lr
 
     def _sigmoid(self, z):
-        return 1 / (1 + np.exp(-z))
+        return 1.0 / (1.0 + np.exp(-z))
 
     def _dsigmoid(self, a):
-        # derivative of sigmoid given activation a
-        return a * (1 - a)
+        # derivative of sigmoid at activation a
+        return a * (1.0 - a)
 
-    def fit(self, X, y, epochs=1000, tol=1e-4):
+    def fit(self, X, y, max_epochs=1000, tol=1e-6):
         """
-        X: array-like, shape (n_samples, n_inputs)
-        y: array-like, shape (n_samples,) with values 0 or 1
+        X: (n_samples, n_inputs), y: (n_samples,) with values 0 or 1
         """
         n_samples = X.shape[0]
-        for epoch in range(epochs):
-            loss = 0
+        for epoch in range(max_epochs):
+            epoch_loss = 0.0
+
+            # 2) REPEAT until termination
             for xi, yi in zip(X, y):
-                # --- forward pass (step 4) ---
-                z1 = xi.dot(self.W1) + self.b1           # hidden linear
-                a1 = self._sigmoid(z1)                   # hidden activation
-                z2 = a1.dot(self.W2) + self.b2           # output linear
-                a2 = self._sigmoid(z2).ravel()           # output activation
+                # 4) FORWARD: compute activations
+                z1 = xi.dot(self.W1) + self.b1           # hidden pre-act
+                a1 = self._sigmoid(z1)                   # hidden output
+                z2 = a1.dot(self.W2) + self.b2           # output pre-act
+                a2 = self._sigmoid(z2).ravel()           # final output
 
-                # accumulate simple squared‐error loss
-                loss += 0.5 * (yi - a2)**2
+                # accumulate mean‐squared error
+                epoch_loss += 0.5 * (yi - a2)**2
 
-                # --- backward pass (step 5 & 6) ---
-                # step 5: delta for output layer
+                # 5) DELTA for output neuron: δ² = y(1−y)(t−y)
                 delta2 = (yi - a2) * self._dsigmoid(a2)   # shape (1,)
 
-                # step 6: delta for hidden layer
-                # sum over downstream weights * delta2, then * sigmoid’
+                # 6) DELTA for hidden neurons: δ¹ = h(1−h) * (W2 · δ²)
                 delta1 = self._dsigmoid(a1) * (self.W2.ravel() * delta2)
 
-                # --- parameter updates (step 7) ---
-                # hidden→output weights & output bias
-                self.W2 += self.lr * np.outer(a1, delta2)   # (n_hidden,1)
+                # 7) UPDATE weights & thresholds
+                # hidden→output
+                self.W2 += self.lr * np.outer(a1, delta2)
                 self.b2 += self.lr * delta2
 
-                # input→hidden weights & hidden biases
-                self.W1 += self.lr * np.outer(xi, delta1)    # (n_inputs,n_hidden)
+                # input→hidden
+                self.W1 += self.lr * np.outer(xi, delta1)
                 self.b1 += self.lr * delta1
 
-            # average loss over dataset
-            loss /= n_samples
-            if loss < tol:
-                print(f’Converged at epoch {epoch}, loss={loss:.6f}’)
+            # average loss this epoch
+            epoch_loss /= n_samples
+
+            # 9) TERMINATION check
+            if epoch_loss < tol:
+                print(f'Converged at epoch {epoch} with loss {epoch_loss:.6e}')
                 break
+        else:
+            print(f'Max epochs reached, final loss: {epoch_loss:.6e}')
 
     def predict_proba(self, X):
-        z1 = X.dot(self.W1) + self.b1
-        a1 = self._sigmoid(z1)
-        z2 = a1.dot(self.W2) + self.b2
-        return self._sigmoid(z2).ravel()
+        a1 = self._sigmoid(X.dot(self.W1) + self.b1)
+        a2 = self._sigmoid(a1.dot(self.W2) + self.b2)
+        return a2.ravel()
 
     def predict(self, X, threshold=0.5):
         return (self.predict_proba(X) >= threshold).astype(int)
 
 
-# --- USAGE EXAMPLE ---
-# after you’ve preprocessed and split your DataFrame:
-# X_train, X_test are numpy arrays, y_train, y_test are 0/1 vectors
-
-# Initialize & train
-mlp = SimpleMLP(n_inputs=X_train.shape[1], n_hidden=5, lr=0.001)
-mlp.fit(X_train, y_train, epochs=200)
-
-# Evaluate
-y_pred = mlp.predict(X_test)
-acc = (y_pred == y_test).mean()
-print("Test accuracy:", acc)
-
+# --- USAGE with your preprocessed & scaled arrays ---
+# X_train, X_test: numpy arrays
 
 #    5. plot it
 #    6. profit
 #END
-# %%
