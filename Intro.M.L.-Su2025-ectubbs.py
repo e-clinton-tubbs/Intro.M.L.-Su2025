@@ -12,18 +12,19 @@ import matplotlib.pyplot as plt
 
 #DATA IMPORT
 df = pd.read_csv("C:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/Resource Use Classfication.csv")
-
+np.random.seed(1234)
 #WORKSPACE
 #    1. exploratory data analysis & data cleaning
- 
-print(df.info())     # column dtypes & non-null counts //COPILOT
-print(df.head())      # peek at first rows  //COPILOT
-print(df.describe())  # stats on numeric cols  //COPILOT
+
+
+#print(df.info())     # column dtypes & non-null counts //COPILOT
+#print(df.head())      # peek at first rows  //COPILOT
+#print(df.describe())  # stats on numeric cols  //COPILOT
 
 #    2. data preprocessing
 
 # Check for missing values //from S.S.S.T.
-print(df.isnull().sum())
+#print(df.isnull().sum())
 
 #ECT; 114 out of 422 firms have no "total energy use to revenues USD in millions"
 #ECT; otherwise looks good?
@@ -60,7 +61,6 @@ df['emt_bin'] = df['Environment Management Training'].map({False: 0, True: 1})
 col = 'Total Energy Use To Revenues USD in million'
 df['teur_bin'] = (df[col] - df[col].mean()) / df[col].std()
 
-
 # 2.9 Environmental Materials Sourcing (FALSE(0)/TRUE(1)) - bool
 df['ems_bin'] = df['Environmental Materials Sourcing'].map({False: 0, True: 1})
 
@@ -76,33 +76,34 @@ df['GB_clean'] = df['Green Buildings'].str.strip().str.upper()
 # 2.11.2 map strings to integers, let unmapped become <NA>
 gb_map = {'TRUE': 1, 'FALSE': 0, 'NO VALUE': pd.NA}
 df['gb_bin'] = df['GB_clean'].map(gb_map).astype('Int64')
-print(df['gb_bin'].value_counts(dropna=False))
+#print(df['gb_bin'].value_counts(dropna=False))
 
 # 2.12 Environmental Supply Chain Management (FALSE(0)/TRUE(1)) - bool
 df['escm_bin'] = df['Environmental Supply Chain Management'].map({False: 0, True: 1})
 
 # check for class imbalance
-print(df['Resource Use Score'].value_counts())
+#print(df['Resource Use Score'].value_counts())
 
 # Summary stats of data
-print(df.iloc[:,1:].describe())  # only summary stats for numeric columns
+#print(df.iloc[:,1:].describe())  # only summary stats for numeric columns
 
 #print(df.dtypes)
 
 # see missing values
-print(df.isnull().sum())
+#print(df.isnull().sum())
 
 #SUPPOSED TO BE dropping rows w/t missing values //ECT
 df = df.dropna(how='any',axis=0)
 
 # Check that missing values have been dropped
-print(df.isnull().sum())
+#print(df.isnull().sum())
 
 #    3. fit the neural network
 
+#dropping index column
+df = df.drop(columns=['Unnamed: 0'])
+
 # Split the data into features (X) and target (y)
-from sklearn.model_selection import train_test_split
-# --- after df is preprocessed and missing rows dropped --
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPClassifier
@@ -110,7 +111,7 @@ from sklearn.neural_network import MLPClassifier
 # Split
 
 # 0) Print out your actual column names so you can see exactly what Pandas sees:
-print(df.columns.tolist())
+#print(df.columns.tolist())
 
 # 1) drop rows that are missing the features you care about
 to_keep = [
@@ -128,26 +129,42 @@ y = df['rus_bin']
 # 3) keep only numeric features
 X = X.select_dtypes(include=['number'])
 
-# now you can split & scale without error
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# 1) Stratified split → X_tr is a DataFrame
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=40
+    X, y, test_size=0.2, random_state=42, stratify=y
 )
 
-from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
-X_test  = scaler.transform(X_test)
+# 2) Recombine and sample on pandas objects
+import pandas as pd
+train = pd.concat([X_train, y_train.rename('rus_bin')], axis=1)
 
-print(X.columns)
-print(X.dtypes)
+# Separate classes
+maj = train[train.rus_bin == 1]
+min = train[train.rus_bin == 0]
 
-# scaling data
-from sklearn.preprocessing import StandardScaler
+# Upsample minority
+min_up = min.sample(n=len(maj), replace=True, random_state=42)
 
-scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
+# Put back together
+train_bal = pd.concat([maj, min_up], axis=0)
+
+# Split back out
+X_train_bal = train_bal.drop(columns='rus_bin')
+y_train_bal = train_bal['rus_bin']
+
+print("X_train.shape:", X_train_bal.shape)
+print("y_train.shape:", y_train_bal.shape)
+
+# 3) # scaling data
+scaler = StandardScaler().fit(X_train_bal)
+X_train = scaler.transform(X_train_bal)
 X_test = scaler.transform(X_test)
+
+#print(X.columns)
+#print(X.dtypes)
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -161,7 +178,7 @@ clf = MLPClassifier(random_state=1,
                     learning_rate="constant",
                     learning_rate_init=0.001,
                     alpha=0.0001,  # Regularization term
-                    early_stopping=True).fit(X_train, y_train)
+                    early_stopping=True).fit(X_train, y_train_bal)
 
 # Predict on the test set
 y_test_pred = clf.predict(X_test)
@@ -304,11 +321,6 @@ class BackpropMLP:
 
     def predict(self, X, threshold=0.5):
         return (self.predict_proba(X) >= threshold).astype(int)
-
-
-# --- USAGE with your preprocessed & scaled arrays ---
-# X_train, X_test: numpy arrays
-
 #    5. plot it
 #    6. profit
 #END
