@@ -57,6 +57,9 @@ df['emt_bin'] = df['Environment Management Training'].map({False: 0, True: 1})
 
 # 2.9 Total Energy Use To Revenues USD in million - float64
 # normalization
+col = 'Total Energy Use To Revenues USD in million'
+df['teur_bin'] = (df[col] - df[col].mean()) / df[col].std()
+
 
 # 2.9 Environmental Materials Sourcing (FALSE(0)/TRUE(1)) - bool
 df['ems_bin'] = df['Environmental Materials Sourcing'].map({False: 0, True: 1})
@@ -111,7 +114,7 @@ print(df.columns.tolist())
 
 # 1) drop rows that are missing the features you care about
 to_keep = [
-  'Total Energy Use To Revenues USD in million',
+  'teur_bin',
   'pwe_bin','pee_bin','pesc_bin','rrt_bin',
   'twe_bin','tee_bin','emt_bin','ems_bin',
   'reu_bin','gb_bin','escm_bin'
@@ -128,7 +131,7 @@ X = X.select_dtypes(include=['number'])
 # now you can split & scale without error
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.2, random_state=40
 )
 
 from sklearn.preprocessing import StandardScaler
@@ -152,7 +155,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 # Instantiate and train the neural network with specified parameters
 clf = MLPClassifier(random_state=1, 
                     hidden_layer_sizes=(5,),  # One hidden layer with 5 neurons
-                    max_iter=200,  
+                    max_iter=400,  
                     activation = "logistic",  # Sigmoid activation function
                     solver = "adam",  # Adam optimizer (stochastic gradient descent method)
                     learning_rate="constant",
