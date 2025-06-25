@@ -24,10 +24,14 @@ np.random.seed(1234)
 #    2. data preprocessing
 
 # Check for missing values //from S.S.S.T.
-#print(df.isnull().sum())
+print(df.isnull().sum())
 
 #ECT; 114 out of 422 firms have no "total energy use to revenues USD in millions"
 #ECT; otherwise looks good?
+
+#Remove duplicates // winnie
+columns_to_check = df.columns[2:]
+df = df.drop_duplicates(subset=columns_to_check).reset_index(drop=True)
 
 # var. hardcoding loop 
 # 2.1 resource use score (bad(0)/good(1)) - object
@@ -59,7 +63,8 @@ df['emt_bin'] = df['Environment Management Training'].map({False: 0, True: 1})
 # 2.9 Total Energy Use To Revenues USD in million - float64
 # normalization
 col = 'Total Energy Use To Revenues USD in million'
-df['teur_bin'] = (df[col] - df[col].mean()) / df[col].std()
+#df['teur_bin'] = (df[col] - df[col].mean()) / df[col].std()
+df['teur_bin'] = (df[col] > df[col].mean()).astype(int)
 
 # 2.9 Environmental Materials Sourcing (FALSE(0)/TRUE(1)) - bool
 df['ems_bin'] = df['Environmental Materials Sourcing'].map({False: 0, True: 1})
@@ -68,7 +73,7 @@ df['ems_bin'] = df['Environmental Materials Sourcing'].map({False: 0, True: 1})
 df['reu_bin'] = df['Renewable Energy Use'].map({False: 0, True: 1})
  
 # 2.11 Green Buildings (FALSE(0)/TRUE(1)) - object
-#df['gb_bin'] = df['Green Buildings'].map({'FALSE': 0, 'TRUE': 1, 'no value': np.nan})
+df['gb_bin'] = df['Green Buildings'].map({'FALSE': 0, 'TRUE': 1, 'no value': np.nan})
 
 # 2.11.1 normalize casing & strip whitespace
 df['GB_clean'] = df['Green Buildings'].str.strip().str.upper()
@@ -76,13 +81,13 @@ df['GB_clean'] = df['Green Buildings'].str.strip().str.upper()
 # 2.11.2 map strings to integers, let unmapped become <NA>
 gb_map = {'TRUE': 1, 'FALSE': 0, 'NO VALUE': pd.NA}
 df['gb_bin'] = df['GB_clean'].map(gb_map).astype('Int64')
-#print(df['gb_bin'].value_counts(dropna=False))
+print(df['gb_bin'].value_counts(dropna=False))
 
 # 2.12 Environmental Supply Chain Management (FALSE(0)/TRUE(1)) - bool
 df['escm_bin'] = df['Environmental Supply Chain Management'].map({False: 0, True: 1})
 
 # check for class imbalance
-#print(df['Resource Use Score'].value_counts())
+print(df['Resource Use Score'].value_counts())
 
 # Summary stats of data
 #print(df.iloc[:,1:].describe())  # only summary stats for numeric columns
@@ -158,27 +163,37 @@ y_train_bal = train_bal['rus_bin']
 print("X_train.shape:", X_train_bal.shape)
 print("y_train.shape:", y_train_bal.shape)
 
+#checking how many of 0 & 1 are in the rus_bin
+unique, counts = np.unique(y_train_bal, return_counts=True)
+print(dict(zip(unique,counts)))
+
+#print(df['Resource Use Score'].value_counts())
+
+print("Y original train class counts:", y_train.value_counts())
+print("Y After balancing:", y_train_bal.value_counts())
+
+print("X Original train class counts:", X_train.value_counts())
+print("X After balancing:", X_train_bal.value_counts())
+
 # 3) # scaling data
 scaler = StandardScaler().fit(X_train_bal)
-X_train = scaler.transform(X_train_bal)
+#scaler = StandardScaler()
+X_train_bal = scaler.transform(X_train_bal)
 X_test = scaler.transform(X_test)
-
-#print(X.columns)
-#print(X.dtypes)
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 # Instantiate and train the neural network with specified parameters
 clf = MLPClassifier(random_state=1, 
-                    hidden_layer_sizes=(5,),  # One hidden layer with 5 neurons
+                    hidden_layer_sizes=(9,),  # One hidden layer with 5 neurons
                     max_iter=400,  
                     activation = "logistic",  # Sigmoid activation function
                     solver = "adam",  # Adam optimizer (stochastic gradient descent method)
                     learning_rate="constant",
                     learning_rate_init=0.001,
                     alpha=0.0001,  # Regularization term
-                    early_stopping=True).fit(X_train, y_train_bal)
+                    early_stopping=True).fit(X_train_bal, y_train_bal)
 
 # Predict on the test set
 y_test_pred = clf.predict(X_test)
@@ -254,7 +269,7 @@ print('Accuracy: {:.2f}'.format(accuracy_score(y_test, grid_predictions)))
 import numpy as np
 
 class BackpropMLP:
-    def __init__(self, n_inputs, n_hidden=5, lr=0.001, seed=42):
+    def __init__(self, n_inputs, n_hidden=9, lr=0.001, seed=42):
         rng = np.random.RandomState(seed)
         # 1) randomly initialize weights & thresholds (biases) from (0,1)
         self.W1 = rng.rand(n_inputs, n_hidden)    # input → hidden weights
