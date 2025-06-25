@@ -19,3 +19,12 @@ algorithm: neural network
     4. model diagnostic
     5. plot it
     6. profit
+
+//PAPER
+    1. INTRO (SIMIN)
+    2. DATA CLEANING (SIMIN)
+    3. E.D.A. (WINNIE)
+    4. MODEL FITTING (ERIC)
+    5. DIAGNOGSTICS (ERIC)
+    6. PLOTTING & DISCUSSION (CHUJIE)
+    7. CONCLUSION

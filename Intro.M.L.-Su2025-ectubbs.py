@@ -186,10 +186,10 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 # Instantiate and train the neural network with specified parameters
 clf = MLPClassifier(random_state=1, 
-                    hidden_layer_sizes=(12),  #  1 hidden layers with 12 neurons
-                    max_iter=600,  
-                    activation = "logistic",  # Sigmoid activation function
-                    solver = "adam",  # Adam optimizer (stochastic gradient descent method)
+                    hidden_layer_sizes=(120, 80, 40),  #  3 hidden layers with 120, 80, 40 neurons
+                    max_iter=200,  
+                    activation = "relu",  # Sigmoid activation function
+                    solver = "sgd",  # Adam optimizer (stochastic gradient descent method)
                     learning_rate="constant",
                     learning_rate_init=0.1,
                     alpha=0.0001,  # Regularization term
@@ -242,11 +242,12 @@ plt.show()
 from sklearn.model_selection import GridSearchCV
 param_grid = {
     'hidden_layer_sizes': [(150,100,50), (120,80,40), (100,50,30)], 
-    'max_iter': [200, 250, 300],
+    'max_iter': [1, 100, 200, 300, 400, 500],
     'activation': ['logistic', 'relu'],
     'solver': ['sgd', 'adam'],
-    'alpha': [0.0001, 0.05],
+    'alpha': [0.0001, 0.05, 1],
     'learning_rate': ['constant','adaptive'],
+    'learning_rate_init': [0.1, 1],
 }
 
 # Grid search with cross-validation
