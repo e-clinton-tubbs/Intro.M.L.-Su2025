@@ -1,0 +1,171 @@
+
+# scaling data
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+# Instantiate and train the neural network with specified parameters
+clf = MLPClassifier(random_state=1, 
+                    hidden_layer_sizes=(5,),  # One hidden layer with 5 neurons
+                    max_iter=400,  
+                    activation = "logistic",  # Sigmoid activation function
+                    solver = "adam",  # Adam optimizer (stochastic gradient descent method)
+                    learning_rate="constant",
+                    learning_rate_init=0.001,
+                    alpha=0.0001,  # Regularization term
+                    early_stopping=True).fit(X_train, y_train)
+
+# Predict on the test set
+y_test_pred = clf.predict(X_test)
+# Calculate predicted probabilities (for further analysis if needed)
+clf.predict_proba(X_test)
+
+# Extract and print weights and biases of the trained neural network
+print(f'Weights between the input and the hidden layer: {clf.coefs_[0]}')  
+print(f'Weights between the hidden layer and the output: {clf.coefs_[1]}')
+
+print(f'Value of w_0: {clf.coefs_[0][0][0]}')
+print(f'Value of w_1: {clf.coefs_[0][1][0]}')
+
+print(f'Bias values of first hidden layer: {clf.intercepts_[0]}')
+print(f'Bias values of first hidden layer: {clf.intercepts_[1]}')
+
+# Print model parameters and evaluation metrics
+params = clf.get_params()
+
+print(f'Accuracy: {accuracy_score(y_test, y_test_pred)}')
+print(f'Confusion Matrix: {confusion_matrix(y_test, y_test_pred)}')
+print(f'Classification Report: {classification_report(y_test, y_test_pred)}')
+
+# Visualize the confusion matrix using a heatmap
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+
+conf_matrix = confusion_matrix(y_test, y_test_pred)
+sns.heatmap(conf_matrix, annot=True, fmt='d')
+plt.xlabel("Actual")
+plt.ylabel("Predicted")
+plt.show()
+
+layer_coefs = clf.coefs_
+layer_intercepts = clf.intercepts_
+iterations = clf.n_iter_
+
+# Plot the loss curve to visualize loss decay over iterations
+plt.plot(clf.loss_curve_)
+plt.title("Loss Curve", fontsize=14)
+plt.xlabel('Iterations')
+plt.ylabel('Cost')
+plt.show()
+
+# Perform hyperparameter tuning using GridSearchCV
+from sklearn.model_selection import GridSearchCV
+param_grid = {
+    'hidden_layer_sizes': [(150,100,50), (120,80,40), (100,50,30)], 
+    'max_iter': [200, 250, 300],
+    'activation': ['logistic', 'relu'],
+    'solver': ['sgd', 'adam'],
+    'alpha': [0.0001, 0.05],
+    'learning_rate': ['constant','adaptive'],
+}
+
+# Grid search with cross-validation
+grid = GridSearchCV(clf, param_grid, n_jobs= -1, cv=5, verbose=2)
+grid.fit(X_train, y_train)
+
+# Print the best hyperparameters
+print(grid.best_params_) 
+
+# Predict using the best model from GridSearchCV
+grid_predictions = grid.predict(X_test) 
+
+# Print the accuracy of the grid search model
+print('Accuracy: {:.2f}'.format(accuracy_score(y_test, grid_predictions)))
+
+#    4. model diagnostic
+
+#4.1.error propagation
+
+import numpy as np
+
+class BackpropMLP:
+    def __init__(self, n_inputs, n_hidden=5, lr=0.001, seed=42):
+        rng = np.random.RandomState(seed)
+        # 1) randomly initialize weights & thresholds (biases) from (0,1)
+        self.W1 = rng.rand(n_inputs, n_hidden)    # input → hidden weights
+        self.b1 = rng.rand(n_hidden)              # hidden thresholds
+        self.W2 = rng.rand(n_hidden, 1)           # hidden → output weights
+        self.b2 = rng.rand(1)                     # output threshold
+        self.lr = lr
+
+    def _sigmoid(self, z):
+        return 1.0 / (1.0 + np.exp(-z))
+
+    def _dsigmoid(self, a):
+        # derivative of sigmoid at activation a
+        return a * (1.0 - a)
+
+    def fit(self, X, y, max_epochs=1000, tol=1e-6):
+        """
+        X: (n_samples, n_inputs), y: (n_samples,) with values 0 or 1
+        """
+        n_samples = X.shape[0]
+        for epoch in range(max_epochs):
+            epoch_loss = 0.0
+
+            # 2) REPEAT until termination
+            for xi, yi in zip(X, y):
+                # 4) FORWARD: compute activations
+                z1 = xi.dot(self.W1) + self.b1           # hidden pre-act
+                a1 = self._sigmoid(z1)                   # hidden output
+                z2 = a1.dot(self.W2) + self.b2           # output pre-act
+                a2 = self._sigmoid(z2).ravel()           # final output
+
+                # accumulate mean‐squared error
+                epoch_loss += 0.5 * (yi - a2)**2
+
+                # 5) DELTA for output neuron: δ² = y(1−y)(t−y)
+                delta2 = (yi - a2) * self._dsigmoid(a2)   # shape (1,)
+
+                # 6) DELTA for hidden neurons: δ¹ = h(1−h) * (W2 · δ²)
+                delta1 = self._dsigmoid(a1) * (self.W2.ravel() * delta2)
+
+                # 7) UPDATE weights & thresholds
+                # hidden→output
+                self.W2 += self.lr * np.outer(a1, delta2)
+                self.b2 += self.lr * delta2
+
+                # input→hidden
+                self.W1 += self.lr * np.outer(xi, delta1)
+                self.b1 += self.lr * delta1
+
+            # average loss this epoch
+            epoch_loss /= n_samples
+
+            # 9) TERMINATION check
+            if epoch_loss < tol:
+                print(f'Converged at epoch {epoch} with loss {epoch_loss:.6e}')
+                break
+        else:
+            print(f'Max epochs reached, final loss: {epoch_loss:.6e}')
+
+    def predict_proba(self, X):
+        a1 = self._sigmoid(X.dot(self.W1) + self.b1)
+        a2 = self._sigmoid(a1.dot(self.W2) + self.b2)
+        return a2.ravel()
+
+    def predict(self, X, threshold=0.5):
+        return (self.predict_proba(X) >= threshold).astype(int)
+
+
+# --- USAGE with your preprocessed & scaled arrays ---
+# X_train, X_test: numpy arrays
+
+#    5. plot it
+#    6. profit
+#END
