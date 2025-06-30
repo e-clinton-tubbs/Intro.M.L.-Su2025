@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Data Cleaning}{4}{0}{2}
+\beamer@sectionintoc {3}{Explorative Data Analysis (EDA)}{5}{0}{3}
+\beamer@sectionintoc {4}{Model Fitting}{6}{0}{4}
+\beamer@sectionintoc {5}{Diagnostics}{7}{0}{5}
+\beamer@sectionintoc {6}{Plotting \& Discussion}{8}{0}{6}
+\beamer@sectionintoc {7}{Conclusion}{9}{0}{7}

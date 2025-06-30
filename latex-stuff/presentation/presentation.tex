@@ -1,0 +1,89 @@
+
+% SLIDE GENERATION INSTRUCTIONS
+
+% For each slide I will paste in latex code with comments.
+% For each comment, identify how to best address it
+% considering the other comments and the context from the paper.
+
+% To address each comment, ONLY write the changes you propose
+% in code blocks I can easily paste into the latex document.
+% For each code block explain HOW your changes address my comments.
+% Think step-by-step and always identify your previous issues first.
+% Make sure to output latex that is at most 80 chars per line,
+% make plenty line breaks to ensure good readability.
+
+% When writing slides, please make sure to keep this logical
+% structure so that it is still understandable.
+% It must have a narrative, that is very important.
+% Split one 'slide' into multiple pages using the package and
+% \only<slide number, e.g. 1, 2 or even '1-2' for both> {..} to make it more easy to follow
+% for listeners.
+
+% Your output should look like this:
+% ## Slide <num>: <slide title>
+% This slide addresses the comment <comment from latex> by
+% <one sentence explanation of slide contents>.
+% ```latex
+% \only<1> { % Slide 1 content, narrative, etc. }
+% \only<2-3> { % Slide 2, transition to 3 }
+% \only<3> { % Slide 3 content, narrative, etc. }
+% ```
+
+\documentclass{beamer}
+\usetheme{Madrid} 
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+
+% See https://tex.stackexchange.com/a/5255
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\usetikzlibrary{positioning}
+
+% Center the frame title and remove the footer
+% \setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{footline}[page number]{}
+
+% Define some math operators
+\newcommand{\E}{\mathbb{E}}
+
+% Uncomment this to remove the navigation symbols
+% \setbeamertemplate{navigation symbols}{}
+
+% Includes names, dates, etc.
+% This way, they are not used in the LLM when generating slides.
+\include{header}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\include{chapters/intro}
+\include{chapters/dc}
+\include{chapters/eda}
+\include{chapters/mf}
+\include{chapters/diag}
+\include{chapters/pd}
+\include{chapters/con}
+
+\end{document}
+
+
+%//PAPER
+%    1. INTRO (SIMIN)
+%    2. DATA CLEANING (SIMIN)
+%    3. E.D.A. (WINNIE)
+%    4. MODEL FITTING (ERIC)
+%    5. DIAGNOGSTICS (ERIC)
+%    6. PLOTTING & DISCUSSION (CHUJIE)
+%    7. CONCLUSION
