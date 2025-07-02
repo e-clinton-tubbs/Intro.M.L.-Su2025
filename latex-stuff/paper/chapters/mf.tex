@@ -1,8 +1,39 @@
 \section{Model Fitting}
 
-% Frame 1: Motivation & Research Question
-\begin{frame}{Motivation \& Core Research Question}
+%MODEL FITTING NOTES
+%what is model fitting?
+
+%Model Fitting is a measurement of how well a machine learning model adapts
+% to data that is similar to the data on which it was trained. The fitting process is 
+%generally built-in to models and is automatic.
+
+%So this is basically the same as the backpropagation that we do in our python file, with the neural network
+%wit hthe neural network being able to backpropagate its changes throguh the rest of the model
+%This makes life relatively easy for us, no?
+
+% Frame 1: Model Fitting
+
+Model fitting is the process by which a machine learning model adjusts its internal 
+parameters to minimize the discrepancy between its predictions and the observed data. In supervised learning, we define a loss function
+ \(L(\theta)\) that measures this error—where \(\theta\) denotes all trainable parameters—and then optimize:
+
+\[
+\theta \leftarrow \theta - \eta\,\nabla_{\theta}L(\theta),
+\]
+
+using gradient‐based methods such as (stochastic) gradient descent. 
+
+Within neural networks, backpropagation efficiently computes \(\nabla_{\theta}L\) by applying the chain rule through each layer. 
+Iterating this update over many epochs (and possibly minibatches) lets the model “fit” patterns in the training set. 
+Although modern libraries automate these steps, understanding loss optimization and backpropagation is essential for diagnosing convergence issues, tuning hyperparameters (learning rate, batch size, etc.), and avoiding overfitting.
+
+% If you’re in Beamer, drop the above paragraphs and use this frame instead:
+\begin{frame}{Model Fitting}
   \begin{itemize}
-    \item tk
+    \item Definition: tuning model parameters to reduce prediction error
+    \item Loss function \(L(\theta)\) optimized via gradient descent
+    \item Backpropagation computes gradients layer by layer
+    \item Key hyperparameters: learning rate, batch size, epochs
+    \item Understanding fitting helps with convergence diagnostics and generalization
   \end{itemize}
 \end{frame}

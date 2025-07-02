@@ -9,6 +9,7 @@ import numpy as np #chujie.wang suggestion
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
 #DATA IMPORT
 df = pd.read_csv("C:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/Resource Use Classfication.csv")
@@ -61,10 +62,44 @@ df['tee_bin'] = df['Targets Energy Efficiency'].map({False: 0, True: 1})
 df['emt_bin'] = df['Environment Management Training'].map({False: 0, True: 1})
 
 # 2.9 Total Energy Use To Revenues USD in million - float64
-# normalization
+# 2.9.1 normalization
 col = 'Total Energy Use To Revenues USD in million'
-#df['teur_bin'] = (df[col] - df[col].mean()) / df[col].std()
-df['teur_bin'] = (df[col] > df[col].mean()).astype(int)
+# produce a histogram to show the right skewness of the data
+# Select and clean your column
+col = 'Total Energy Use To Revenues USD in million'
+data = df[col].dropna()
+
+# Plot histogram
+plt.figure(figsize=(8, 5))
+plt.hist(data, bins=30, color='skyblue', edgecolor='black')
+plt.title('Distribution of Total Energy Use To Revenues')
+plt.xlabel(col)
+plt.ylabel('Frequency')
+plt.tight_layout()
+plt.show()
+
+# 2.9.2 loglp to compress right skewness
+df['teur_log'] = np.log1p(df[col])
+# 2.9.3 min/max scale log-values into [0,1]
+scaler = MinMaxScaler()
+df['teur_bin'] = scaler.fit_transform(df[['teur_log']])
+
+#df['teur_bin'] = (df[col] > df[col].mean()).astype(int)
+
+# produce a new histogram to show that the right skewness resolved
+# produce a histogram to show the right skewness of the data
+# Select and clean your column
+col = 'teur_bin'
+data = df[col].dropna()
+
+# Plot histogram
+plt.figure(figsize=(8, 5))
+plt.hist(data, bins=30, color='skyblue', edgecolor='black')
+plt.title('Distribution of Total Energy Use To Revenues Recoded')
+plt.xlabel(col)
+plt.ylabel('Frequency')
+plt.tight_layout()
+plt.show()
 
 # 2.9 Environmental Materials Sourcing (FALSE(0)/TRUE(1)) - bool
 df['ems_bin'] = df['Environmental Materials Sourcing'].map({False: 0, True: 1})
@@ -187,7 +222,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 # Instantiate and train the neural network with specified parameters
 clf = MLPClassifier(random_state=1, 
                     hidden_layer_sizes=(120, 80, 40),  #  3 hidden layers with 120, 80, 40 neurons
-                    max_iter=200,  
+                    max_iter=400,  
                     activation = "relu",  # Sigmoid activation function
                     solver = "sgd",  # Adam optimizer (stochastic gradient descent method)
                     learning_rate="constant",
