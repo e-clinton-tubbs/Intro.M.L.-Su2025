@@ -9,7 +9,12 @@ import numpy as np #chujie.wang suggestion
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.model_selection import train_test_split
+
 
 #DATA IMPORT
 df = pd.read_csv("C:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/Resource Use Classfication.csv")
@@ -18,9 +23,9 @@ np.random.seed(1234)
 #    1. exploratory data analysis & data cleaning
 
 
-#print(df.info())     # column dtypes & non-null counts //COPILOT
-#print(df.head())      # peek at first rows  //COPILOT
-#print(df.describe())  # stats on numeric cols  //COPILOT
+print(df.info())     # column dtypes & non-null counts //COPILOT
+print(df.head())      # peek at first rows  //COPILOT
+print(df.describe())  # stats on numeric cols  //COPILOT
 
 #    2. data preprocessing
 
@@ -63,7 +68,6 @@ df['emt_bin'] = df['Environment Management Training'].map({False: 0, True: 1})
 
 # 2.9 Total Energy Use To Revenues USD in million - float64
 # 2.9.1 normalization
-col = 'Total Energy Use To Revenues USD in million'
 # produce a histogram to show the right skewness of the data
 # Select and clean your column
 col = 'Total Energy Use To Revenues USD in million'
@@ -125,18 +129,18 @@ df['escm_bin'] = df['Environmental Supply Chain Management'].map({False: 0, True
 print(df['Resource Use Score'].value_counts())
 
 # Summary stats of data
-#print(df.iloc[:,1:].describe())  # only summary stats for numeric columns
+print(df.iloc[:,1:].describe())  # only summary stats for numeric columns
 
-#print(df.dtypes)
+print(df.dtypes)
 
 # see missing values
-#print(df.isnull().sum())
+print(df.isnull().sum())
 
 #SUPPOSED TO BE dropping rows w/t missing values //ECT
 df = df.dropna(how='any',axis=0)
 
 # Check that missing values have been dropped
-#print(df.isnull().sum())
+print(df.isnull().sum())
 
 #    3. fit the neural network
 
@@ -169,8 +173,56 @@ y = df['rus_bin']
 # 3) keep only numeric features
 X = X.select_dtypes(include=['number'])
 
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
+
+# RUN THE LOGI. REG. HERE (yoinked wholesale from Julian's code)
+
+logreg = LogisticRegression(solver='liblinear', C=10.0, random_state=0)
+logreg_result=logreg.fit(X, y)
+y_pred_logreg=logreg.predict(X)
+
+
+print(f'Accuracy: {accuracy_score(y, y_pred_logreg)}')
+print(f'Confusion Matrix: {confusion_matrix(y, y_pred_logreg)}')
+print(f'Classification Report: {classification_report(y, y_pred_logreg)}')
+
+print(logreg.predict_proba(X)) # Predicted Output False/True 
+print(logreg.predict(X)) #Actual Predictions
+
+# Cofusion matrix as heat map 
+cm = confusion_matrix(y, y_pred_logreg)
+fig, ax = plt.subplots(figsize=(3, 3))
+ax.imshow(cm)
+ax.grid(False)
+ax.xaxis.set(ticks=(0, 1), ticklabels=('Predicted False', 'Predicted True'))
+ax.yaxis.set(ticks=(0, 1), ticklabels=('Actual False', 'Actual Ture'))
+ax.set_ylim(1.5, -0.5)
+for i in range(2):
+    for j in range(2):
+        ax.text(j, i, cm[i, j], ha='center', va='center', color='red')
+plt.title('Confusion matrix for Logistic Regression for Resource Use Data')
+plt.show()
+
+
+from sklearn.metrics import roc_curve, roc_auc_score
+
+logreg_roc_auc = roc_auc_score(y, logreg.predict(X))
+fpr, tpr, thresholds = roc_curve(y, logreg.predict_proba(X)[:, 1])
+plt.figure()
+plt.plot(fpr, tpr, label='Logistic Regression (area = %0.2f)' % logreg_roc_auc)
+plt.plot([0, 1], [0, 1], 'r--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver operating characteristic')
+plt.legend(loc="lower right")
+plt.show()
+
+print(
+      "Classes: ", logreg.classes_, "\n",
+      "Intercept: ", logreg.intercept_,"\n",
+      "Coefficients: ", logreg.coef_
+      )
 
 # 1) Stratified split → X_tr is a DataFrame
 X_train, X_test, y_train, y_test = train_test_split(
