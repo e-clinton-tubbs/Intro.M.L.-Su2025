@@ -1,8 +1,92 @@
-\section{Diagnostics}
+\section{Model Diagnostics}
 
-% Frame 1: Motivation & Research Question
-\begin{frame}{Motivation \& Core Research Question}
-  \begin{itemize}
-    \item tk
-  \end{itemize}
-\end{frame}
+Once the network is trained, it’s crucial to verify that it learned meaningful patterns rather than memorizing noise. In this section we cover loss‐curve analysis, hyperparameter validation, error‐propagation checks and final performance metrics.
+
+\subsection{Loss‐Curve Analysis}
+
+We plot the training loss over iterations to ensure smooth decay and detect plateaus or oscillations:
+
+
+
+\[
+L^{(t)} = \frac{1}{2N}\sum_{i=1}^{N}\bigl(y_i - \hat y_i^{(t)}\bigr)^2,
+\]
+
+
+where \(\hat y_i^{(t)}\) is the network’s output at iteration \(t\). A monotonically decreasing loss curve indicates stable learning; sudden spikes or flat regions suggest learning‐rate issues or vanishing gradients.
+
+\begin{verbatim}
+plt.plot(clf.loss_curve_)
+plt.title{Loss Curve}
+plt.xlabel{Iterations}
+plt.ylabel{Cost}
+plt.show()
+\end{verbatim}
+
+\subsection{Hyperparameter Search}
+
+GridSearchCV systematically explores combinations of layer sizes, activation functions, solvers and regularization strengths. We examine cross‐validation accuracy and standard deviation to choose a model that generalizes well:
+
+\begin{itemize}
+  \item \texttt{hidden\_layer\_sizes}: (150,100,50), (120,80,40), (100,50,30)
+  \item \texttt{activation}: logistic vs.\ relu
+  \item \texttt{solver}: sgd vs.\ adam
+  \item \texttt{alpha}: 1e–4, 5e–2, 1
+  \item learning‐rate schedules and initial rates
+\end{itemize}
+
+After fitting:
+\begin{verbatim}
+print(grid.best_params_)
+print("Accuracy: {:.2f}".format(
+    accuracy_score(y_test, grid.predict(X_test))
+))
+\end{verbatim}
+
+\subsection{Custom Backpropagation Checks}
+
+To validate that gradients and weight updates behave correctly, we re‐implement a minimal two‐layer MLP.  At each sample we compute:
+
+
+
+\[
+\delta^2 = (y - a^2)\,\sigma'(z^2), 
+\qquad
+\delta^1 = \bigl(W^2\,\delta^2\bigr)\circ\sigma'(z^1),
+\]
+
+
+and update  
+\(\;W \gets W + \eta\,a\,\delta\),  
+\(\;b \gets b + \eta\,\delta\).  
+Convergence is signaled when the epoch loss falls below a small tolerance.
+
+\subsection{Final Performance Metrics}
+
+Beyond accuracy, inspect:
+\begin{itemize}
+  \item Confusion matrix (precision, recall, F1‐score)
+  \item Receiver‐Operating Characteristic (ROC) curve and AUC
+  \item Calibration plots for predicted probabilities
+  \item Profit or cost‐benefit analysis if thresholds carry economic impact
+\end{itemize}
+
+---
+
+% If you’re using Beamer, summarise on one slide:
+\begin{itemize}
+  \item Plot loss curve → learning dynamics
+  \item GridSearchCV → robust hyperparameters
+  \item Backprop sanity‐check → gradient & weight updates
+  \item Metrics: accuracy, confusion matrix, ROC/AUC, calibration
+  \item Economic/profit evaluation via custom thresholds
+\end{itemize}
+
+
+%diagonostics notes:
+%   >needed to recode the revenue var since it was in float
+%   >had to normalize the revenue var since it was funky
+%   >needed to log the revenue var since it was funky, particularly right skewed
+%   >had to recode the green building var since it had some "missing values" that were
+%   hidden as strings
+%   >needed to drop the vars that were ugly values & the nonsense
