@@ -88,7 +88,7 @@ df['teur_log'] = np.log1p(df[col])
 # 2.9.3 min/max scale log-values into [0,1]
 scaler = MinMaxScaler()
 df['teur_bin'] = scaler.fit_transform(df[['teur_log']])
-
+df = df[df ['teur_bin'] <= 0.8]
 #df['teur_bin'] = (df[col] > df[col].mean()).astype(int)
 
 # produce a new histogram to show that the right skewness resolved
