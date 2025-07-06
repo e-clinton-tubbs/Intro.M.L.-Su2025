@@ -38,6 +38,15 @@
 \usepackage{pgfplots}
 \usepackage{amssymb}
 
+\let\cleardoublepage\relax
+\let\clearpage\relax
+
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}
+  {\chaptername\ \thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
 
 % See https://tex.stackexchange.com/a/5255
 \usepackage{amsmath}

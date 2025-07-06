@@ -293,6 +293,8 @@ INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.st
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\titlesec\titlesec.sty
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
@@ -346,14 +348,6 @@ INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Bo
 OUTPUT paper.toc
 INPUT .\chapters\intro.tex
 INPUT .\chapters\intro.tex
-INPUT C:\Users\eclin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntx-Regular-tlf-ot1.vf
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txmiaX.tfm
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1r.tfm
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\newtx\ntx-ot1-tlf.enc
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntx-Bold-tlf-ot1.vf
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txbmiaX.tfm
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Bold-tlf-ot1r.tfm
 OUTPUT chapters\intro.aux
 INPUT .\chapters\intro.tex
 INPUT .\chapters\intro.tex
@@ -362,7 +356,6 @@ INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ts1ntxtlf.fd
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ts1ntxtlf.fd
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ts1ntxtlf.fd
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ts1-qtmr.tfm
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ts1.enc
 INPUT .\chapters\dc.tex
 INPUT .\chapters\dc.tex
 OUTPUT chapters\dc.aux
@@ -432,6 +425,15 @@ INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtt.fd
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtt.fd
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ot1ntxtt.fd
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txtt.tfm
+INPUT C:\Users\eclin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntx-Regular-tlf-ot1.vf
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txmiaX.tfm
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1r.tfm
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\newtx\ntx-ot1-tlf.enc
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntx-Bold-tlf-ot1.vf
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txbmiaX.tfm
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Bold-tlf-ot1r.tfm
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ts1.enc
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntxmi.vf
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\NewTXMI.tfm
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\stxscr.tfm
@@ -447,8 +449,6 @@ OUTPUT chapters\diag.aux
 INPUT .\chapters\diag.tex
 INPUT .\chapters\diag.tex
 INPUT chapters\diag.tex
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1.tfm
-INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Bold-tlf-ot1.tfm
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntxsy.vf
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txsys.tfm
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txex-bar.tfm
@@ -461,6 +461,8 @@ INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txmiaX
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txmiaSTbb.tfm
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntx-Regular-tlf-ot1.vf
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1r.tfm
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1.tfm
+INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Bold-tlf-ot1.tfm
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\vf\public\newtx\ntx-Bold-tlf-ot1.vf
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\txbmiaX.tfm
 INPUT C:\Users\eclin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Bold-tlf-ot1r.tfm

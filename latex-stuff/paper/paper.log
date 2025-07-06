@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.21)  6 JUL 2025 09:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.21)  6 JUL 2025 10:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -858,6 +858,17 @@ or  <return>  to continue without it.
 
 LaTeX Font Info:    Redeclaring math symbol \hslash on input line 262.
 LaTeX Font Info:    Redeclaring math symbol \backepsilon on input line 265.
+) (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box67
+\beforetitleunit=\skip55
+\aftertitleunit=\skip56
+\ttl@plus=\dimen298
+\ttl@minus=\dimen299
+\ttl@toksa=\toks46
+\titlewidth=\dimen300
+\titlewidthlast=\dimen301
+\titlewidthfirst=\dimen302
 ) (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
@@ -866,22 +877,22 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@cnth=\count344
 \Gm@cntv=\count345
 \c@Gm@tempcnt=\count346
-\Gm@bindingoffset=\dimen298
-\Gm@wd@mp=\dimen299
-\Gm@odd@mp=\dimen300
-\Gm@even@mp=\dimen301
-\Gm@layoutwidth=\dimen302
-\Gm@layoutheight=\dimen303
-\Gm@layouthoffset=\dimen304
-\Gm@layoutvoffset=\dimen305
-\Gm@dimlist=\toks46
+\Gm@bindingoffset=\dimen303
+\Gm@wd@mp=\dimen304
+\Gm@odd@mp=\dimen305
+\Gm@even@mp=\dimen306
+\Gm@layoutwidth=\dimen307
+\Gm@layoutheight=\dimen308
+\Gm@layouthoffset=\dimen309
+\Gm@layoutvoffset=\dimen310
+\Gm@dimlist=\toks47
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:54: Undefined control sequence.
-l.54 \setbeamertemplate
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:63: Undefined control sequence.
+l.63 \setbeamertemplate
                        {footline}[page number]{}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -890,81 +901,81 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:54: LaTeX Error: Missing \begin{document}.
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:63: LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.54 \setbeamertemplate{f
+l.63 \setbeamertemplate{f
                          ootline}[page number]{}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: \include should only be used after \begin{document} on input line 64.
+LaTeX Warning: \include should only be used after \begin{document} on input line 73.
 
 (header.tex)
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 66.
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 75.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 66.
+(Font)              scaled to size 12.0pt on input line 75.
  (paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 66.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 66.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 75.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 75.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 66.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 66.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 75.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 75.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 66.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 66.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 75.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 75.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 66.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 66.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 75.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 75.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count347
-\scratchdimen=\dimen306
-\scratchbox=\box67
+\scratchdimen=\dimen311
+\scratchbox=\box68
 \nofMPsegments=\count348
 \nofMParguments=\count349
-\everyMPshowfont=\toks47
+\everyMPshowfont=\toks48
 \MPscratchCnt=\count350
-\MPscratchDim=\dimen307
+\MPscratchDim=\dimen312
 \MPnumerator=\count351
 \makeMPintoPDFobject=\count352
-\everyMPtoPDFconversion=\toks48
+\everyMPtoPDFconversion=\toks49
 ) (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -973,16 +984,16 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@mv@tabular=\count353
 \c@mv@boldtabular=\count354
-LaTeX Info: Command `\dddot' is already robust on input line 66.
-LaTeX Info: Command `\ddddot' is already robust on input line 66.
-Package hyperref Info: Link coloring OFF on input line 66.
+LaTeX Info: Command `\dddot' is already robust on input line 75.
+LaTeX Info: Command `\ddddot' is already robust on input line 75.
+Package hyperref Info: Link coloring OFF on input line 75.
 \@outlinefile=\write4
 \openout4 = `paper.out'.
 
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 66.
+ on input line 75.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1018,10 +1029,10 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:69: Missing } inserted.
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:78: Missing } inserted.
 <inserted text> 
                 }
-l.69     \titlepage
+l.78     \titlepage
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1029,27 +1040,27 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:69: You can't use `\hrule' here except with leaders.
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:78: You can't use `\hrule' here except with leaders.
 \frame  ... #1\vrule \@width \@wholewidth }\hrule 
                                                   \@height \@wholewidth \vsk...
-l.69     \titlepage
+l.78     \titlepage
                    
 To put a horizontal rule in an hbox or an alignment,
 you should use \leaders or \hrulefill (see The TeXbook).
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:69: Missing number, treated as zero.
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:78: Missing number, treated as zero.
 <to be read again> 
                    \vskip 
-l.69     \titlepage
+l.78     \titlepage
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:69: Illegal unit of measure (pt inserted).
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:78: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \vskip 
-l.69     \titlepage
+l.78     \titlepage
                    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1058,10 +1069,10 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:69: Missing } inserted.
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:78: Missing } inserted.
 <inserted text> 
                 }
-l.69     \titlepage
+l.78     \titlepage
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1070,14 +1081,14 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (47.22484pt too wide) in paragraph at lines 69--69
+Overfull \hbox (47.22484pt too wide) in paragraph at lines 78--78
 [][] 
  []
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:69: Extra }, or forgotten \endgroup.
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:78: Extra }, or forgotten \endgroup.
 <recently read> }
                  
-l.69     \titlepage
+l.78     \titlepage
                    
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1085,10 +1096,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:69: Extra }, or forgotten \endgroup.
+c:/Users/eclin/Documents/GitHub/Intro.M.L.-Su2025/latex-stuff/paper/paper.tex:78: Extra }, or forgotten \endgroup.
 <recently read> }
                  
-l.69     \titlepage
+l.78     \titlepage
                    
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1097,21 +1108,16 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 73.
+(Font)              scaled to size 17.28pt on input line 82.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 73.
+(Font)              scaled to size 17.28pt on input line 82.
 No file paper.toc.
 \tf@toc=\write5
 \openout5 = `paper.toc'.
 
-
-
-[1
-
-{C:/Users/eclin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 \openout2 = `chapters/intro.aux'.
 
- (chapters/intro.tex
+(chapters/intro.tex
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 6.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
@@ -1119,28 +1125,12 @@ File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 6.
 )
-
-[2
-
-{C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
 \openout2 = `chapters/dc.aux'.
 
  (chapters/dc.tex)
-
-[3
-
-
-
-]
 \openout2 = `chapters/eda.aux'.
 
  (chapters/eda.tex)
-
-[4
-
-
-
-]
 \openout2 = `chapters/mf.aux'.
 
  (chapters/mf.tex
@@ -1223,50 +1213,33 @@ File: ot1ntxtt.fd 2012/04/20 v3.1
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
 (Font)              scaled to size 12.0pt on input line 32.
 
-
-[5
-
+Overfull \vbox (255.51006pt too high) has occurred while \output is active []
 
 
-])
 
-[6]
+[1
+
+{C:/Users/eclin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}])
 \openout2 = `chapters/diag.aux'.
 
  (chapters/diag.tex
+
+[2]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 27.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 27.
 
 
-[7
+[3]
 
-
-
-]
-
-[8])
-
-[9]
+[4])
 \openout2 = `chapters/pd.aux'.
 
  (chapters/pd.tex)
-
-[10
-
-
-
-]
 \openout2 = `chapters/con.aux'.
 
  (chapters/con.tex)
-
-[11
-
-
-
-]
 No file paper.bbl.
 (paper.aux (chapters/intro.aux) (chapters/dc.aux) (chapters/eda.aux) (chapters/mf.aux) (chapters/diag.aux) (chapters/pd.aux) (chapters/con.aux))
  ***********
@@ -1281,20 +1254,20 @@ Package rerunfilecheck Warning: File `paper.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `paper.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  F756C38F4D0CC1903A16DA0E0190FB4E;1393.
+(rerunfilecheck)             After:  7FF61091936846330A764E09724C72EC;1142.
  ) 
 Here is how much of TeX's memory you used:
- 34203 strings out of 468219
- 779119 string characters out of 5432869
- 1271538 words of memory out of 5000000
- 62091 multiletter control sequences out of 15000+600000
+ 34495 strings out of 468219
+ 783118 string characters out of 5432869
+ 1276538 words of memory out of 5000000
+ 62389 multiletter control sequences out of 15000+600000
  651871 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,5n,87p,789b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,6n,87p,789b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb>
-Output written on paper.pdf (11 pages, 154933 bytes).
+Output written on paper.pdf (4 pages, 147238 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
+ 84 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
