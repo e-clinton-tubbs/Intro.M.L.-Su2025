@@ -270,7 +270,7 @@ print(
 
 # Instantiate and train the neural network with specified parameters
 clf = MLPClassifier(random_state=1, 
-                    hidden_layer_sizes=(20, 20, 20),  #  3 hidden layers with 120, 80, 40 neurons
+                    hidden_layer_sizes=(120, 80, 40),  #  3 hidden layers with 120, 80, 40 neurons
                     #hidden_layer_sizes=(5,),
                     max_iter=400,  
                     activation = "relu",  # Sigmoid activation function
