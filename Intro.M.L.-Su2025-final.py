@@ -10,7 +10,7 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, f1_score
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -270,7 +270,8 @@ print(
 
 # Instantiate and train the neural network with specified parameters
 clf = MLPClassifier(random_state=1, 
-                    hidden_layer_sizes=(120, 80, 40),  #  3 hidden layers with 120, 80, 40 neurons
+                    hidden_layer_sizes=(20, 20, 20),  #  3 hidden layers with 120, 80, 40 neurons
+                    #hidden_layer_sizes=(5,),
                     max_iter=400,  
                     activation = "relu",  # Sigmoid activation function
                     solver = "sgd",  # Adam optimizer (stochastic gradient descent method)
@@ -322,14 +323,34 @@ plt.xlabel('Iterations')
 plt.ylabel('Cost')
 plt.show()
 
+# F1 test for in-sample (on X, y)
+y_pred_logreg = logreg.predict(X)
+f1_logreg_train = f1_score(y, y_pred_logreg, average='binary')
+print(f'LogReg F1 (train): {f1_logreg_train:.3f}')
+
+# for out-of-sample (on X_test, y_test)
+y_test_pred = clf.predict(X_test)
+f1_mlp_test = f1_score(y_test, y_test_pred, average='binary')
+print(f'MLP F1 (test):  {f1_mlp_test:.3f}')
+
+
+# Plot histogram
+plt.figure(figsize=(8, 5))
+plt.hist(data, bins=30, color='skyblue', edgecolor='black')
+plt.title('Distribution of Total Energy Use To Revenues Recoded')
+plt.xlabel(col)
+plt.ylabel('Frequency')
+plt.tight_layout()
+plt.show()
+
 # Perform hyperparameter tuning using GridSearchCV
 from sklearn.model_selection import GridSearchCV
 param_grid = {
     'hidden_layer_sizes': [(150,100,50), (120,80,40), (100,50,30)], 
-    'max_iter': [1, 100, 200, 300, 400, 500],
+    'max_iter': [1, 100, 200, 300],
     'activation': ['logistic', 'relu'],
     'solver': ['sgd', 'adam'],
-    'alpha': [0.0001, 0.05, 1],
+    'alpha': [0.01, 0.05, 1],
     'learning_rate': ['constant','adaptive'],
     'learning_rate_init': [0.1, 1],
 }

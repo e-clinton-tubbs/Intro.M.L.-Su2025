@@ -13,27 +13,44 @@
 
 % Frame 1: Model Fitting
 
-Model fitting is the process by which a machine learning model adjusts its internal 
+The next step of the process when working with a neural network is model fitting. Model Fitting is the process by which a machine learning model adjusts its internal 
 parameters to minimize the discrepancy between its predictions and the observed data. In supervised learning, we define a loss function
- \(L(\theta)\) that measures this error—where \(\theta\) denotes all trainable parameters—and then optimize:
+ \(L(\theta)\) that measures this error—where \(\theta\) denotes all trainable parameters and then optimize such that:
 
 \[
 \theta \leftarrow \theta - \eta\,\nabla_{\theta}L(\theta),
 \]
 
-using gradient‐based methods such as (stochastic) gradient descent. 
+using gradient‐based methods such as stochastic gradient descent. 
 
 Within neural networks, backpropagation efficiently computes \(\nabla_{\theta}L\) by applying the chain rule through each layer. 
-Iterating this update over many epochs (and possibly minibatches) lets the model “fit” patterns in the training set. 
-Although modern libraries automate these steps, understanding loss optimization and backpropagation is essential for diagnosing convergence issues, tuning hyperparameters (learning rate, batch size, etc.), and avoiding overfitting.
+Iterating this update over many epochs lets the model “fit” patterns in the training set better and better. 
+Although conviently, this step can be automated through coding the process of backpropagation to automate these steps, understanding loss optimization and backpropagation is essential for diagnosing convergence issues, tuning hyperparameters such as learning rate, batch size, and avoiding overfitting.
+With our backpropagation via Python's class.BackpropMLP, we found that we could consistantly find the best fitting model out of those provided to the neural network while keeping our code running in sub-five minutes.
+As of the latest version of our code, we generally have the following output from our backpropagation routine:
+
+\begin{verbatim}
+{'activation': 'relu',
+ 'alpha': 0.05, 
+ 'hidden_layer_sizes': (120, 80, 40), 
+ 'learning_rate': 'constant', 
+ 'learning_rate_init': 1, 
+ 'max_iter': 100, 
+ 'solver': 'adam'}
+Accuracy: 0.84
+\end{verbatim}
+
+This then, is the best "fitting" of the possible combinations of the various hyperparameter for the neural network.
+This set of hyperparameters is also quite excellent because, as will be discussed later, we have an accuracy score that is relatively good; not low, but also not so high that we need to be concerned about the risk of overfitting on the data.
+This is most apparent in the statistics for our F1 tests for the Logistic Regession and our Neural Network as will be discussed in the following diagonostics section of the paper.
 
 % If you’re in Beamer, drop the above paragraphs and use this frame instead:
-\begin{frame}{Model Fitting}
-  \begin{itemize}
-    \item Definition: tuning model parameters to reduce prediction error
-    \item Loss function \(L(\theta)\) optimized via gradient descent
-    \item Backpropagation computes gradients layer by layer
-    \item Key hyperparameters: learning rate, batch size, epochs
-    \item Understanding fitting helps with convergence diagnostics and generalization
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Model Fitting}
+%  \begin{itemize}
+%    \item Definition: tuning model parameters to reduce prediction error
+%    \item Loss function \(L(\theta)\) optimized via gradient descent
+%    \item Backpropagation computes gradients layer by layer
+%    \item Key hyperparameters: learning rate, batch size, epochs
+%    \item Understanding fitting helps with convergence diagnostics and generalization
+%  \end{itemize}
+%\end{frame}

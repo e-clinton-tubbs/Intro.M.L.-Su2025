@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.21)  2 JUL 2025 13:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.21)  6 JUL 2025 09:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1215,61 +1215,45 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
  (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 32.
+ (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ot1ntxtt.fd
+File: ot1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 32.
+
 
 [5
 
 
 
-]
+])
+
+[6]
 \openout2 = `chapters/diag.aux'.
 
  (chapters/diag.tex
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 5.
+(Font)              scaled to size 14.4pt on input line 27.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 5.
-LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 18.
- (C:\Users\eclin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ot1ntxtt.fd
-File: ot1ntxtt.fd 2012/04/20 v3.1
-)
-LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 18.
+(Font)              scaled to size 14.4pt on input line 27.
 
 
-[6
+[7
 
 
 
 ]
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 78.
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 79.
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 80.
 
-chapters/diag.tex:80: Misplaced alignment tab character &.
-l.80 ...tem Backprop sanity‐check → gradient &
-                                                   weight updates
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[8])
 
-)
-
-[7]
+[9]
 \openout2 = `chapters/pd.aux'.
 
  (chapters/pd.tex)
 
-[8
+[10
 
 
 
@@ -1278,7 +1262,7 @@ might try typing `S' now just to see what is salvageable.
 
  (chapters/con.tex)
 
-[9
+[11
 
 
 
@@ -1297,20 +1281,20 @@ Package rerunfilecheck Warning: File `paper.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `paper.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  CEC1B87861D6CEA61A5032961622D4F7;1640.
+(rerunfilecheck)             After:  F756C38F4D0CC1903A16DA0E0190FB4E;1393.
  ) 
 Here is how much of TeX's memory you used:
- 34206 strings out of 468219
- 779169 string characters out of 5432869
+ 34203 strings out of 468219
+ 779119 string characters out of 5432869
  1271538 words of memory out of 5000000
- 62094 multiletter control sequences out of 15000+600000
- 652208 words of font info for 97 fonts, out of 8000000 for 9000
+ 62091 multiletter control sequences out of 15000+600000
+ 651871 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,5n,87p,789b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\eclin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb>
-Output written on paper.pdf (9 pages, 150804 bytes).
+<C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/eclin/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb>
+Output written on paper.pdf (11 pages, 154933 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 118 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

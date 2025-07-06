@@ -1,19 +1,17 @@
 \section{Model Diagnostics}
 
-Once the network is trained, it’s crucial to verify that it learned meaningful patterns rather than memorizing noise. In this section we cover loss‐curve analysis, hyperparameter validation, error‐propagation checks and final performance metrics.
+The next step in the process of researching with a neural network once the network is trained, is Model Diagnostics. 
+Model Diagnostics is the process by which we, having done our Data Cleaning, Explorative Data Analysis, and Model Fitting, trust but verify that our model has learned meaningful patterns rather than memorizing the random noise present in any real work data we might use. 
+There are generally several ways to go about this process depending on the particular model, but in this section we cover loss‐curve analysis, hyperparameter validation, error‐propagation checks and F1‐score.
 
-\subsection{Loss‐Curve Analysis}
-
-We plot the training loss over iterations to ensure smooth decay and detect plateaus or oscillations:
-
-
+The first part of our Model Diagonistics is to plot the training loss over iterations to ensure smooth decay and detect plateaus or oscillations:
 
 \[
 L^{(t)} = \frac{1}{2N}\sum_{i=1}^{N}\bigl(y_i - \hat y_i^{(t)}\bigr)^2,
 \]
 
-
 where \(\hat y_i^{(t)}\) is the network’s output at iteration \(t\). A monotonically decreasing loss curve indicates stable learning; sudden spikes or flat regions suggest learning‐rate issues or vanishing gradients.
+We performed this test using the following code:
 
 \begin{verbatim}
 plt.plot(clf.loss_curve_)
@@ -23,8 +21,12 @@ plt.ylabel{Cost}
 plt.show()
 \end{verbatim}
 
-\subsection{Hyperparameter Search}
+Generally, what we can observe from our loss-curve gradient is a slightly wiggly but otherwise monotonically decreasing curve as we would hope to see, showing that our model has stable learning over many generations.
 
+
+\subsection{Hyperparameter Tuning}
+The next step in our model diagnostics is that of a hyperparameter tuning. In short, hyperparameter tuning is looking for those provided hyperparameters that give use the best accuracy.
+To do this, we make use of the GridSearchCV, which will go through the process automatically.
 GridSearchCV systematically explores combinations of layer sizes, activation functions, solvers and regularization strengths. We examine cross‐validation accuracy and standard deviation to choose a model that generalizes well:
 
 \begin{itemize}
@@ -35,19 +37,17 @@ GridSearchCV systematically explores combinations of layer sizes, activation fun
   \item learning‐rate schedules and initial rates
 \end{itemize}
 
-After fitting:
+After fitting, used the following code to produce the accuracy scores from the generated best parameters:
 \begin{verbatim}
 print(grid.best_params_)
 print("Accuracy: {:.2f}".format(
     accuracy_score(y_test, grid.predict(X_test))
 ))
 \end{verbatim}
-
+Which in turn gave us the final output for our hyperparameter tuning.
 \subsection{Custom Backpropagation Checks}
-
-To validate that gradients and weight updates behave correctly, we re‐implement a minimal two‐layer MLP.  At each sample we compute:
-
-
+To validate that gradients and weight updates behave correctly within our model, we re‐implement a minimal two‐layer MLP.  
+At each sample we compute:
 
 \[
 \delta^2 = (y - a^2)\,\sigma'(z^2), 
@@ -55,32 +55,56 @@ To validate that gradients and weight updates behave correctly, we re‐implemen
 \delta^1 = \bigl(W^2\,\delta^2\bigr)\circ\sigma'(z^1),
 \]
 
-
 and update  
 \(\;W \gets W + \eta\,a\,\delta\),  
 \(\;b \gets b + \eta\,\delta\).  
-Convergence is signaled when the epoch loss falls below a small tolerance.
+With convergence signaled when the epoch loss falls below a small tolerance.
+This is a rather important step in the overal process because in a real world setting, it allows us to insure that our analytic gradients match our numerical approximations as well as make sure that our loss function is backpropagating meaningful infomation.
 
-\subsection{Final Performance Metrics}
+\subsection{F1‐score}
+The usefulness of the F1-score is an important test within our model diagnostics because is a single, useful metric for communicating the precision and recall of our neural network.
+The F1-score, in simple terms, is merely the harmoic mean of the precision and recall of our model, returning a high values when both are also high.
+Looking back through the output of our neural network code we find the following:
 
-Beyond accuracy, inspect:
-\begin{itemize}
-  \item Confusion matrix (precision, recall, F1‐score)
-  \item Receiver‐Operating Characteristic (ROC) curve and AUC
-  \item Calibration plots for predicted probabilities
-  \item Profit or cost‐benefit analysis if thresholds carry economic impact
-\end{itemize}
+Under the logistic regression:
+\begin{verbatim}
+f1-score
+0: 0.80
+1: 0.90
+accuracy: 0.87
+macro avg: 0.85
+weighted avg: 0.86
+\end{verbatim}
 
----
+Under the neural network:
+\begin{verbatim}
+  f1-score
+0: 0.70
+1: 0.83
+accuracy: 0.79
+macro avg: 0.77
+weighted avg: 0.79
+\end{verbatim}
 
+As we can see, in every catagory, the logistic regression provides a higher degree of accuracy then our neural network.
+We are not partiularly surprised by this owing to the fact that our dataset was heavily unbalanced as discussed in the data cleaning section earlier.
+
+Furthermore, we can state this more concisely with the following output from our code:
+
+\begin{verbatim}
+  LogReg F1 (train): 0.899
+MLP F1 (test):  0.833
+\end{verbatim}
+
+Showing that given the inital conditons our neutral network does struggle to reproduce the high degree of accuracy and precision that the logrithmic function does.
 % If you’re using Beamer, summarise on one slide:
-\begin{itemize}
-  \item Plot loss curve → learning dynamics
-  \item GridSearchCV → robust hyperparameters
-  \item Backprop sanity‐check → gradient & weight updates
-  \item Metrics: accuracy, confusion matrix, ROC/AUC, calibration
-  \item Economic/profit evaluation via custom thresholds
-\end{itemize}
+%\begin{itemize}
+%  \item Plot loss curve → learning dynamics
+%  \item GridSearchCV → robust hyperparameters
+%  \item Backprop sanity‐check → gradient & weight updates
+%  \item Metrics: accuracy, confusion matrix, ROC/AUC, calibration
+%  \item Economic/profit evaluation via custom thresholds
+%\end{itemize}
 
 
 %diagonostics notes:
